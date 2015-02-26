@@ -5,8 +5,7 @@
         "date": "October 29 2014, 6:30-8:00pm",
         "neighbourhood": "Benton Street Neighbourhood",
         "quote": "A fun night for families of our community. Games, stories, contests, photo booth and snacks.",
-        "lon": -80.4897754,
-        "lat": 43.4472017
+        "lonlat": "-80.4897754,43.4472017"
     },
     {
         "activity": "Halloween Party",
@@ -14,8 +13,7 @@
         "date": "October 24 2014, 7:30-11:30pm",
         "neighbourhood": "Victoria Common - Mt. Hope",
         "quote": "We have invited our clients, consultants, brokers who have worked with us, and friends we have met these last two years.",
-        "lon": -80.4896291,
-        "lat": 43.46031960000001
+        "lonlat": "-80.4896291,43.46031960000001"
     },
     {
         "activity": "Oktoberfest event at Chicopee  ",
@@ -23,8 +21,7 @@
         "date": "October 18 2014",
         "neighbourhood": "Tremaine Park",
         "quote": "We celebrated Kitchener's German heritage by celebrating Oktoberfest as a group. Before the festivities, one of the neighbourhood families welcomed anyone and everyone into their home for dinner.",
-        "lon": -80.4113816,
-        "lat": 43.4412858
+        "lonlat": "-80.4113816,43.4412858"
     },
     {
         "activity": "Oktoberfest event at Chicopee  ",
@@ -32,8 +29,7 @@
         "date": "October 18 2014",
         "neighbourhood": "Tremaine Park",
         "quote": "We celebrated Kitchener's German heritage by celebrating Oktoberfest as a group. Before the festivities, one of the neighbourhood families welcomed anyone and everyone into their home for dinner.",
-        "lon": -80.4157585,
-        "lat": 43.43507109999999
+        "lonlat": "-80.4157585,43.43507109999999"
     },
     {
         "activity": "Annual Tremaine Park Tree Trimming\n\n\n\n",
@@ -41,8 +37,7 @@
         "date": "November 23 2014",
         "neighbourhood": "Tremaine park",
         "quote": "Weather wasn't cooperating much, so when we saw a sunny break, we reached out to as many park families as we could to invite them for cookies, hot chocolate, candy canes, and festive tree decorating fun!",
-        "lon": -80.4094674,
-        "lat": 43.4417294
+        "lonlat": "-80.4094674,43.4417294"
     },
     {
         "activity": "Colin's 3rd Annual Toy Drive for Anselma House",
@@ -50,8 +45,7 @@
         "date": "November 30 2014, 12:30pm",
         "neighbourhood": "Edgewater Estates",
         "quote": "Colin has been doing this for years now, and we often hear from others that he has inspired them to help the Anselma House specifically, or another charity of their choice. At the Toy Drive we always have a chance to meet new faces, and visit with familiar ones.",
-        "lon": -80.4098214,
-        "lat": 43.44051760000001
+        "lonlat": "-80.4098214,43.44051760000001"
     },
     {
         "activity": "Holiday Potluck and Annual General Meeting",
@@ -59,8 +53,7 @@
         "date": "November 23 2014, 6:00-9:00pm",
         "neighbourhood": "Victoria Park Neighbourhood",
         "quote": "Neighbours are starting to see this as an annual event to get together and connect with other residents. It also informs residents of some of the great work the VPNA has been up to and provides an opportunity for residents to provide feedback on suggested improvements, ideas, etc.",
-        "lon": -80.4991108,
-        "lat": 43.4456983
+        "lonlat": "-80.4991108,43.4456983"
     },
     {
         "activity": "Lecture - Harold Russell about his experience growing up in Victoria Park during World War Two",
@@ -68,8 +61,7 @@
         "date": "October 16 2014, 7:00-9:00pm",
         "neighbourhood": "Victoria Park Neighbourhood ",
         "quote": "Encourages neighbours to gather and learn about the history of the area/neighbourhood.",
-        "lon": -80.4991108,
-        "lat": 43.4456983
+        "lonlat": "-80.4991108,43.4456983"
     },
     {
         "activity": " Community Movie Night - Mr. Peabody and Sherman",
@@ -77,8 +69,7 @@
         "date": "November 6 2014, 5:30-8:30pm",
         "neighbourhood": "Centreville Chicopee",
         "quote": "Had new faces attend the event, as well as many people who have made these movie evenings a regular part of their attendance at the centre.",
-        "lon": -80.4293407,
-        "lat": 43.4288773
+        "lonlat": "-80.4293407,43.4288773"
     },
     {
         "activity": "1st Annual Lantern walk\n",
@@ -86,8 +77,7 @@
         "date": "December 15 2014, 6:30pm",
         "neighbourhood": "Edgewater Estates",
         "quote": "Kids brought glowsticks, flashlights and hot chocolate as we walked through the neighbourhood admiring the Christmas Lights",
-        "lon": -80.4098214,
-        "lat": 43.44051760000001
+        "lonlat": "-80.4098214,43.44051760000001"
     },
     {
         "activity": "Family Day Activities, inside and outside",
@@ -95,8 +85,7 @@
         "date": "February 16 2015, 1:00-4:00pm",
         "neighbourhood": "Williamsburg",
         "quote": "Welcoming first time skaters and having freshly sharpened skates for them to borrow! Family Fun Photo studio, crafts, hot chocolate are the perfect invitations for neighbours.",
-        "lon": -80.503118,
-        "lat": 43.40546880000001
+        "lonlat": "-80.503118,43.40546880000001"
     },
     {
         "activity": "Family Day Activities, inside and outside",
@@ -104,8 +93,7 @@
         "date": "February 16 2015, 1:00-4:00pm",
         "neighbourhood": "Williamsburg",
         "quote": "Welcoming first time skaters and having freshly sharpened skates for them to borrow! Family Fun Photo studio, crafts, hot chocolate are the perfect invitations for neighbours.",
-        "lon": -80.5012671,
-        "lat": 43.4057733
+        "lonlat": "-80.5012671,43.4057733"
     },
     {
         "activity": "Soup Stock",
@@ -113,8 +101,7 @@
         "date": "November 2 2014,  6:00-8:00pm",
         "neighbourhood": "Central Frederick",
         "quote": "It was a fall celebration where everyone was invited to the Brubacher Green Park and to bring along with them their favourite soup and then we had a neighbourhood potluck sharing everyone's soups.",
-        "lon": -80.47797249999999,
-        "lat": 43.4513925
+        "lonlat": "-80.47797249999999,43.4513925"
     },
     {
         "activity": "Community Fun Fair",
@@ -122,8 +109,7 @@
         "date": "February 28 2015, 11:00am-4:00pm",
         "neighbourhood": "Laurentian West",
         "quote": "Free event that would bring our community together in the winter! We approached different organizations to ask them to host the activities.",
-        "lon": -80.5158848,
-        "lat": 43.4063679
+        "lonlat": "-80.5158848,43.4063679"
     },
     {
         "activity": "Skating Party ",
@@ -131,8 +117,7 @@
         "date": "February 8 2015, 3:00-7:00pm",
         "neighbourhood": "Cherry Park ",
         "quote": "We had a skating party with tobogganing, snow shoeing, hockey shootout challenges, curling, hot chocolate, and hot dogs.",
-        "lon": -80.5073496,
-        "lat": 43.4544283
+        "lonlat": "-80.5073496,43.4544283"
     },
     {
         "activity": "Family Day Weekend Sledding and Skating Party",
@@ -140,8 +125,7 @@
         "date": "February 14 2015, 1:00-3:00pm",
         "neighbourhood": "Victoria Park",
         "quote": "Helped connect neighbours with neighbours who might not otherwise have reason to do so.\n",
-        "lon": -80.49769119999999,
-        "lat": 43.44746749999999
+        "lonlat": "-80.49769119999999,43.44746749999999"
     },
     {
         "activity": "Halloween Fun",
@@ -149,8 +133,7 @@
         "date": "October 25 2014, 1:00-3:00pm",
         "neighbourhood": "Stanley Park",
         "quote": "Provided community members with a place to enjoy Halloween safely as well as to introduce neighbours to each other.  By using the community centre helped create awareness of the building and all the services it can offer to the community.",
-        "lon": -80.4505083,
-        "lat": 43.4479761
+        "lonlat": "-80.4505083,43.4479761"
     },
     {
         "activity": "Family Movie Night",
@@ -158,8 +141,7 @@
         "date": "October 14 2014, 6:00-9:00pm",
         "neighbourhood": "Stanley Park",
         "quote": "Provided a free space that was accessible to all children in the community regardless of ability.  The event was free making it accessible to people of all socio-economic statuses.",
-        "lon": -80.4505083,
-        "lat": 43.4479761
+        "lonlat": "-80.4505083,43.4479761"
     },
     {
         "activity": "First Annual Christmas Party",
@@ -167,8 +149,7 @@
         "date": "November 29 2014, 1:30-3:30pm",
         "neighbourhood": "Stanley Park",
         "quote": "This gathering produced a large number of new faces to the community centre that we had not previously seen.  It provided opportunities to seek out information and suggestions from community members and for community members to see what their community centre as to offer.",
-        "lon": -80.4505083,
-        "lat": 43.4479761
+        "lonlat": "-80.4505083,43.4479761"
     },
     {
         "activity": "2nd Annual Family Day Fun",
@@ -176,7 +157,6 @@
         "date": "February 16 2015",
         "neighbourhood": "Stanley Park",
         "quote": "Provided an event for families to come together to engage in crafts and swimming with their children or for individuals to come out and meet other people in their community.",
-        "lon": -80.4505083,
-        "lat": 43.4479761
+        "lonlat": "-80.4505083,43.4479761"
     }
 ]
