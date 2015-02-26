@@ -1,4 +1,6 @@
-[
+{
+  "type": "FeatureCollection",
+  "features": [
     {
         "activity": "Fall Family Fun Fair",
         "location": "Benton Street Baptist Church, 90 Benton Street",
