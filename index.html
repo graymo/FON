@@ -67,8 +67,7 @@
     if (feature.properties && feature.properties.Quote) {
         layer.bindPopup(feature.properties.Quote);
 
-    var geojsonFeatures = {
-        {
+    var someFeatures = [{
             "type": "Feature", 
             "geometry": {
                 "type": "Point", 
@@ -414,10 +413,9 @@
                 "Neighbourhood": "Stanley Park", 
                 "Quote": "Provided an event for families to come together to engage in crafts and swimming with their children or for individuals to come out and meet other people in their community."
             }
-        }
-    };
+        }];
 
-    L.geoJson(geojsonFeatures, {
+    L.geoJson(someFeatures, {
       onEachFeature: onEachFeature
       }).addTo(map);
 
