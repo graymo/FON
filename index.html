@@ -23,10 +23,6 @@
 			id: 'examples.map-i875mjb7'
 		}).addTo(map);
 
-    function onEachFeature(feature, layer) {
-    if (feature.properties && feature.properties.Quote) {
-        layer.bindPopup(feature.properties.Quote);
-
     var someFeatures = [{
             "type": "Feature", 
             "geometry": {
@@ -105,11 +101,7 @@
                 ]
             }, 
             "properties": {
-                "Activity ": "Annual Tremaine Park Tree Trimming
-
-
-
-", 
+                "Activity ": "Annual Tremaine Park Tree Trimming", 
                 "Location": "At the Tremaine Park Christmas Tree", 
                 "Date": "November 23 2014", 
                 "Neighbourhood": "Tremaine park", 
@@ -194,8 +186,7 @@
                 ]
             }, 
             "properties": {
-                "Activity ": "1st Annual Lantern walk
-", 
+                "Activity ": "1st Annual Lantern walk", 
                 "Location": "Colin's House on Sims Estate Drive", 
                 "Date": "December 15 2014, 6:30pm", 
                 "Neighbourhood": "Edgewater Estates", 
@@ -264,8 +255,7 @@
             }, 
             "properties": {
                 "Activity ": "Community Fun Fair", 
-                "Location": "WT Townshend Public School 
-", 
+                "Location": "WT Townshend Public School ", 
                 "Date": "February 28 2015, 11:00am-4:00pm", 
                 "Neighbourhood": "Laurentian West", 
                 "Quote": "Free event that would bring our community together in the winter! We approached different organizations to ask them to host the activities."
@@ -302,8 +292,7 @@
                 "Location": "Victoria Park Commons", 
                 "Date": "February 14 2015, 1:00-3:00pm", 
                 "Neighbourhood": "Victoria Park", 
-                "Quote": "Helped connect neighbours with neighbours who might not otherwise have reason to do so.
-"
+                "Quote": "Helped connect neighbours with neighbours who might not otherwise have reason to do so."
             }
         }, 
         {
@@ -375,20 +364,7 @@
             }
         }];
 
-    L.geoJson(someFeatures, {
-      onEachFeature: onEachFeature
-      }).addTo(map);
-
-		var popup = L.popup();
-
-		function onMapClick(e) {
-			popup
-				.setLatLng(e.latlng)
-				.setContent("You clicked the map at " + e.latlng.toString())
-				.openOn(map);
-		}
-
-		map.on('click', onMapClick);
+    L.geoJson(someFeatures).addTo(map);
 
 	</script>
 </body>
