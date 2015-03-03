@@ -1,29 +1,35 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Kitchener Festival of Neighbourhoods</title>
-	<meta charset="utf-8" />
+  <title>Kitchener Festival of Neighbourhoods</title>
+  <meta charset="utf-8" />
 
-	<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
+  <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
 
 </head>
 <body>
-	<div id="map" style="width: 600px; height: 400px"></div>
+  <div id="map" style="width: 600px; height: 400px"></div>
 
-	<script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
-	<script>
+  <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+  <script>
 
-		var map = L.map('map').setView([43.43647,-80.45734], 12);
+    var map = L.map('map').setView([43.43647,-80.45734], 12);
 
-		L.tileLayer('https://{s}.tiles.mapbox.com/v3/{id}/{z}/{x}/{y}.png', {
-			maxZoom: 18,
-			attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
-				'<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
-				'Imagery © <a href="http://mapbox.com">Mapbox</a>',
-			id: 'examples.map-i875mjb7'
-		}).addTo(map);
+    L.tileLayer('https://{s}.tiles.mapbox.com/v3/{id}/{z}/{x}/{y}.png', {
+      maxZoom: 18,
+      attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
+        '<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+        'Imagery © <a href="http://mapbox.com">Mapbox</a>',
+      id: 'examples.map-i875mjb7'
+    }).addTo(map);
 
-    var someFeatures = [{
+
+    function onEachFeature(feature, layer){
+      layer.bindPopup(feature.properties.Quote)};
+
+    var events = new L.LayerGroup();
+
+    var fonFeatures = [{
             "type": "Feature", 
             "geometry": {
                 "type": "Point", 
@@ -363,10 +369,14 @@
                 "Quote": "Provided an event for families to come together to engage in crafts and swimming with their children or for individuals to come out and meet other people in their community."
             }
         }];
+    L.geoJson(fonFeatures, {onEachFeature: onEachFeature}).addTo(events);
 
-    L.geoJson(someFeatures).addTo(map).bindPopup(feature.properties);
 
-	</script>
+    var overlays = {"Registered": events};
+
+    L.control.layers(overlays).addTo(map);
+
+  </script>
 </body>
 </html>
 
