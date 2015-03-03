@@ -27,9 +27,9 @@
 
 
     function onEachFeature(feature, layer){
-      if (feature.properties && feature.properties.Quote)
+      if (feature.properties.Quote)
       layer.bindPopup(feature.properties.Quote)
-      else if (feature.properties && feature.properties.NEIGHBOU00)
+      else if (feature.properties.NEIGHBOU00)
       layer.bindPopup(feature.properties.NEIGHBOU00)
     };
 
