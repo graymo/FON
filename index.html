@@ -29,8 +29,8 @@
     function onEachFeature(feature, layer){
       if (feature.properties && feature.properties.Quote)
       layer.bindPopup(feature.properties.Quote)
-      else if (feature.properties && feature.properties.NEIGHBOURHOOD_ASSOCIATION)
-      layer.bindPopup(feature.properties.NEIGHBOURHOOD_ASSOCIATION)
+      else if (feature.properties && feature.properties.NEIGHBOU00)
+      layer.bindPopup(feature.properties.NEIGHBOU00)
     };
 
     var fonFeatures = {{site.data.registered-activities|jsonify}};
