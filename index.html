@@ -29,16 +29,11 @@
     function onEachFeature(feature, layer){
       layer.bindPopup(feature.properties.Quote)};
 
-    var events = new L.LayerGroup();
-
     var fonFeatures = {{site.data.registered-activities|jsonify}};
+    
+    var neighbourhoods = {{site.data.kitchener-neighbourhoods|jsonify}};
  
-    L.geoJson(fonFeatures, {onEachFeature: onEachFeature}).addTo(events);
-
-
-    var overlays = {"Registered": events};
-
-    L.control.layers(overlays).addTo(map);
+    L.geoJson([neighbourhoods, fonFeatures], {onEachFeature: onEachFeature}).addTo(map);
 
   </script>
 </body>
