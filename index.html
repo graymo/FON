@@ -36,8 +36,9 @@
     
     L.geoJson(fonFeatures, {onEachFeature: onEachFeature}).addTo(map);
     
-    var neighbourhoods = {{site.data.kitchener-neighbourhoods|jsonify}},
-        plancomms = {{site.data.kitchener-plancomms|jsonify}};
+    var neighbourhoods = {{site.data.kitchener-neighbourhoods|jsonify}};
+    
+    var plancomms = {{site.data.kitchener-plancomms|jsonify}};
     
   </script>
 </body>
