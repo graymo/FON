@@ -33,22 +33,26 @@
       layer.bindPopup(feature.properties.NEIGHBOU00)
     };
 
+    var boundaries = new L.LayerGroup();
+    
+    var events = new L.LayerGroup();
+    
     var fonFeatures = {{site.data.registered-activities|jsonify}}.addTo(boundaries);
   
     var neighbourhoods = {{site.data.kitchener-neighbourhoods|jsonify}}.addTo(boundaries);
     
     var plancomms = {{site.data.kitchener-plancomms|jsonify}}.addTo(events);
 
-    var boundaries = {
+    var baseLayers = {
       "Neighbourhood Associations": neighbourhoods,
       "Planning Communities": plancomms
     };
     
-    var events = {
+    var overlays = {
       "Registered FON Activities": fonFeatures
     };
 
-    L.control.layers(boundaries, events).addTo(map);
+    L.control.layers(baseLayers, overlays).addTo(map);
     
   </script>
 </body>
