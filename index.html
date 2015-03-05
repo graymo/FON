@@ -15,7 +15,7 @@
   <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
   <script>
 
-    var map = L.map('map',{layers: [events]}).setView([43.43379,-80.4685], 12);
+    var map = L.map('map').setView([43.43379,-80.4685], 12);
     L.tileLayer('https://{s}.tiles.mapbox.com/v3/{id}/{z}/{x}/{y}.png', {
       maxZoom: 18,
       attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
@@ -34,16 +34,10 @@
 
     var fonFeatures = {{site.data.registered-activities|jsonify}},
     
-    var events = L.geoJson(fonFeatures, {onEachFeature: onEachFeature});
+    L.geoJson(fonFeatures, {onEachFeature: onEachFeature}).addTo(map);
     
     var neighbourhoods = {{site.data.kitchener-neighbourhoods|jsonify}},
         plancomms = {{site.data.kitchener-plancomms|jsonify}};
-        
-    var overlays = {
-      "Registered Events": events
-    };   
- 
-    L.control.layers(overlays).addTo(map);
     
   </script>
 </body>
