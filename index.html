@@ -32,14 +32,22 @@
       layer.bindPopup(feature.properties.NEIGHBOU00)
     };
 
+    var events = new L.LayerGroup();
+    
     var fonFeatures = {{site.data.registered-activities|jsonify}};
-  
+    
+    L.geoJson(fonFeatures, {onEachFeature: onEachFeature}).addTo(events);
+
     var neighbourhoods = {{site.data.kitchener-neighbourhoods|jsonify}};
     
     var plancomms = {{site.data.kitchener-plancomms|jsonify}};
     
-    L.geoJson(fonFeatures, {onEachFeature: onEachFeature}).addTo(map);
-
+    var overlays = {
+      "Events": events
+    };
+    
+    L.control.layers(overlays).addTo(map);
+  
   </script>
 </body>
 </html>
