@@ -33,11 +33,6 @@
       else if (feature.properties.PLANNING_C)
       layer.bindPopup(feature.properties.PLANNING_C)
     };
-
-    var markers = new L.MarkerClusterGroup();
-    
-    markers.addLayer(new L.Marker(fonFeature));
-    map.addLayer(markers);
     
     var events = new L.LayerGroup();
     
