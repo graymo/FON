@@ -38,15 +38,28 @@
     
     L.geoJson(fonFeatures, {onEachFeature: onEachFeature}).addTo(events);
 
+    var assoc = new L.LayerGroup();
+    
+    var plan = new L.LayerGroup();
+    
     var neighbourhoods = {{site.data.kitchener-neighbourhoods|jsonify}};
     
     var plancomms = {{site.data.kitchener-plancomms|jsonify}};
+    
+    L.geoJson(neighbourhoods, {onEachFeature: onEachFeature}).addTo(assoc);
+    
+    L.geoJson(plancomms, {onEachFeature: onEachFeature}).addTo(plan);
+    
+    var baseLayers = {
+      "Neighbourhood Associations": assoc,
+      "Planning Communities": plan
+    };
     
     var overlays = {
       "Registered FON Events": events
     };
     
-    L.control.layers(overlays).addTo(map);
+    L.control.layers(baseLayers, overlays).addTo(map);
   
   </script>
 </body>
