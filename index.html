@@ -30,6 +30,8 @@
       layer.bindPopup(feature.properties.Activity + "<br>" + feature.properties.Location + "<br>" + feature.properties.Date + "<br>" + feature.properties.Neighbourhood + "<br>" + feature.properties.Quote)
       else if (feature.properties.NEIGHBOU00)
       layer.bindPopup(feature.properties.NEIGHBOU00)
+      else if (feature.properties.PLANNING_C)
+      layer.bindPopup(feature.properties.PLANNING_C)
     };
 
     var events = new L.LayerGroup();
