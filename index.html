@@ -33,11 +33,11 @@
       layer.bindPopup(feature.properties.NEIGHBOU00)
     };
 
-    var fonFeatures = {{site.data.registered-activities|jsonify}};
+    var fonFeatures = {{site.data.registered-activities|jsonify}}.addTo(map);
   
-    var neighbourhoods = {{site.data.kitchener-neighbourhoods|jsonify}};
+    var neighbourhoods = {{site.data.kitchener-neighbourhoods|jsonify}}.addTo(map);
     
-    var plancomms = {{site.data.kitchener-plancomms|jsonify}};
+    var plancomms = {{site.data.kitchener-plancomms|jsonify}}.addTo(map);
 
     var baseLayers = {
       "Neighbourhood Associations": neighbourhoods,
