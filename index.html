@@ -28,7 +28,7 @@
 
     function onEachFeature(feature, layer){
       if (feature.properties.Quote)
-      layer.bindPopup(feature.properties.Activity<br> + feature.properties.Location<br> + feature.properties.Date<br> + feature.properties.Neighbourhood<br> + "feature.properties.Quote")
+      layer.bindPopup(<b>feature.properties.Activity</b><br> + feature.properties.Location<br> + feature.properties.Date<br> + feature.properties.Neighbourhood<br> + <i>feature.properties.Quote</i>)
       else if (feature.properties.NEIGHBOU00)
       layer.bindPopup(feature.properties.NEIGHBOU00)
     };
