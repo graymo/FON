@@ -33,14 +33,23 @@
       layer.bindPopup(feature.properties.NEIGHBOU00)
     };
 
-    var fonFeatures = {{site.data.registered-activities|jsonify}};
+    var fonFeatures = {{site.data.registered-activities|jsonify}}.addTo(boundaries);
+  
+    var neighbourhoods = {{site.data.kitchener-neighbourhoods|jsonify}}.addTo(boundaries);
     
-    var neighbourhoods = {{site.data.kitchener-neighbourhoods|jsonify}};
-    
-    var plancomms = {{site.data.kitchener-plancomms|jsonify}};
- 
-    L.geoJson([neighbourhoods, fonFeatures, plancomms], {onEachFeature: onEachFeature}).addTo(map);
+    var plancomms = {{site.data.kitchener-plancomms|jsonify}}.addTo(events);
 
+    var boundaries = {
+      "Neighbourhood Associations": neighbourhoods,
+      "Planning Communities": plancomms
+    };
+    
+    var events = {
+      "Registered FON Activities": fonFeatures
+    };
+
+    L.control.layers(boundaries, events).addTo(map);
+    
   </script>
 </body>
 </html>
