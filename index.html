@@ -33,12 +33,19 @@
       layer.bindPopup(feature.properties.NEIGHBOU00)
     };
 
-    var fonFeatures = L.geoJsonEvents([{{site.data.registered-activities|jsonify}}]).addTo(map);
+    var fonFeatures = {{site.data.registered-activities|jsonify}},
     
-    var neighbourhoods = {{site.data.kitchener-neighbourhoods|jsonify}};
+    var events = L.geoJson(fonFeatures, {onEachFeature: onEachFeature});
     
-    var plancomms = {{site.data.kitchener-plancomms|jsonify}};
+    var neighbourhoods = {{site.data.kitchener-neighbourhoods|jsonify}},
+        plancomms = {{site.data.kitchener-plancomms|jsonify}};
+        
+    var overlays = {
+      "Registered Events": events
+    };   
  
+    L.control.layers(overlays).addTo(map);
+    
   </script>
 </body>
 </html>
