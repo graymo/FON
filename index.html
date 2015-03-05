@@ -33,7 +33,7 @@
       layer.bindPopup(feature.properties.NEIGHBOU00)
     };
 
-    var fonFeatures = L.geoJsonEvents({{site.data.registered-activities|jsonify}}).addTo(map);
+    var fonFeatures = L.geoJsonEvents([{{site.data.registered-activities|jsonify}}]).addTo(map);
     
     var neighbourhoods = {{site.data.kitchener-neighbourhoods|jsonify}};
     
