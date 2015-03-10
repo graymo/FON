@@ -40,11 +40,11 @@
     
     var fonFeatures = {{site.data.registered-activities|jsonify}};
     var unregistered = {{site.data.unregistered-events|jsonify}};
-    var grant-awards = {{site.data.grant-awards|jsonify}};
+    var awards = {{site.data.grant-awards|jsonify}};
     
     L.geoJson(fonFeatures, {onEachFeature: onEachFeature}).addTo(events);
     L.geoJson(unregistered).addTo(other);
-    L.geoJson(grant-awards).addTo(grants);
+    L.geoJson(awards).addTo(grants);
 
     var assoc = new L.LayerGroup();
     var ward = new L.LayerGroup();
