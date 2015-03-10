@@ -32,12 +32,6 @@
     var other = L.geoJson(unregistered);
     var grants = L.geoJson(awards);
     
-    var neighbourhoods = {{site.data.kitchener-neighbourhoods|jsonify}};
-    var wards = {{site.data.ward-boundaries|jsonify}};
-    
-    var assoc = L.geoJson(neighbourhoods);
-    var wards = L.geoJson(wards, {style: style}).addTo(map);
-    
     function getColor(w) {
       return w = 1  ? #8dd3c7 :
              w = 2  ? #ffffb3 :
@@ -48,7 +42,8 @@
              w = 7  ? #b3de69 :
              w = 8  ? #fccde5 :
              w = 9  ? #d9d9d9 :
-             w = 10 ? #bc80bd;
+             w = 10 ? #bc80bd :
+                      #ccebc5;
     };
     
     function style(feature) {
@@ -56,6 +51,12 @@
         fillColor: getColor(feature.properties.WardNumber)
       }
     };
+    
+    var neighbourhoods = {{site.data.kitchener-neighbourhoods|jsonify}};
+    var wards = {{site.data.ward-boundaries|jsonify}};
+    
+    var assoc = L.geoJson(neighbourhoods);
+    var wards = L.geoJson(wards, {style: stlye});
     
     var baseLayers = {
       "Kitchener Wards": wards,
