@@ -23,14 +23,6 @@
         'Imagery © <a href="http://mapbox.com">Mapbox</a>',
       id: 'examples.map-i875mjb7'
     }).addTo(map);
-
-
-    function onEachFeature(feature, layer){
-      if (feature.properties.NEIGHBOU00)
-      layer.bindPopup(feature.properties.NEIGHBOU00)
-      else if (feature.properties.WardName)
-      layer.bindPopup(feature.properties.WardName)
-    };
     
     var fonFeatures = {{site.data.registered-activities|jsonify}};
     var unregistered = {{site.data.unregistered-events|jsonify}};
