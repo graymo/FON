@@ -39,14 +39,14 @@
     var wards = L.geoJson(wards);
     
     var baseLayers = {
-      "Wards": wards,
+      "Kitchener Wards": wards,
       "Neighbourhood Associations": assoc
     };
     
     var overlays = {
       "Registered FON Events": events,
       "Other Events": other,
-      "Capital Improvement Grants": grants
+      "Neighbourhood Improvement Grants": grants
     };
     
     L.control.layers(baseLayers, overlays).addTo(map);
