@@ -39,15 +39,12 @@
     var events = L.geoJson(fonFeatures);
     var other = L.geoJson(unregistered);
     var grants = L.geoJson(awards);
-
-    var assoc = new L.LayerGroup();
-    var ward = new L.LayerGroup();
     
     var neighbourhoods = {{site.data.kitchener-neighbourhoods|jsonify}};
     var wards = {{site.data.ward-boundaries|jsonify}};
     
-    L.geoJson(neighbourhoods, {onEachFeature: onEachFeature}).addTo(assoc);
-    L.geoJson(wards, {onEachFeature: onEachFeature}).addTo(ward);
+    var assoc = L.geoJson(neighbourhoods, {onEachFeature: onEachFeature});
+    var wards = L.geoJson(wards, {onEachFeature: onEachFeature});
     
     var baseLayers = {
       "Wards": ward,
