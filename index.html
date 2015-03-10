@@ -55,7 +55,7 @@
     var neighbourhoods = {{site.data.kitchener-neighbourhoods|jsonify}};
     var wards = {{site.data.ward-boundaries|jsonify}};
     
-    L.geoJson([neighbourhoods, wards, {style: style}]).addTo(map);
+    L.geoJson([neighbourhoods, wards], {style: style}).addTo(map);
 
     //var baseLayers = {
     //  "Kitchener Wards": wards,
