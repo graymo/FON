@@ -1,4 +1,6 @@
-[
+{
+  "type": "FeatureCollection", 
+  "features":[
     {
         "activity": "Fall Family Fun Fair",
         "location": "Benton Street Baptist Church, 90 Benton Street",
@@ -260,4 +262,4 @@
         "lon": -80.4778566,
         "lat": 43.4827653
     }
-]
+]}
