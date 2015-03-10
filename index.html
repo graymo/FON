@@ -36,7 +36,7 @@
     var unregistered = {{site.data.unregistered-events|jsonify}};
     var awards = {{site.data.grant-awards|jsonify}};
     
-    var events = L.geoJson(fonFeatures).bindPopup(feature.properties.Quote);
+    var events = L.geoJson(fonFeatures);
     var other = L.geoJson(unregistered);
     var grants = L.geoJson(awards);
 
