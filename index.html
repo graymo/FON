@@ -28,6 +28,10 @@
     function onEachFeature(feature, layer){
       if (feature.properties.Quote)
       layer.bindPopup(feature.properties.Activity + "<br>" + feature.properties.Location + "<br>" + feature.properties.Date + "<br>" + feature.properties.Neighbourhood + "<br>" + feature.properties.Quote)
+      else if (feature.properties.Activity)
+      layer.bindPopup(feature.properties.Activity)
+      else if (feature.properties.description)
+      layer.bindPopup(feature.properties.description)
       else if (feature.properties.NEIGHBOU00)
       layer.bindPopup(feature.properties.NEIGHBOU00)
       else if (feature.properties.WardName)
