@@ -32,19 +32,13 @@
       layer.bindPopup(feature.properties.WardName)
     };
     
-    var events = new L.LayerGroup();
-    var other = new L.LayerGroup();
-    var grants = new L.LayerGroup();
-    
     var fonFeatures = {{site.data.registered-activities|jsonify}};
     var unregistered = {{site.data.unregistered-events|jsonify}};
     var awards = {{site.data.grant-awards|jsonify}};
     
-    L.geoJson(fonFeatures, {function: onEachFeature(feature, layer){
-      layer.bindPopup(feature.properties.Activity + "<br>" + feature.properties.Location + "<br>" + feature.properties.Date + "<br>" + feature.properties.Neighbourhood + "<br>" + feature.properties.Quote)
-    }}).addTo(events);
-    L.geoJson(unregistered).addTo(other);
-    L.geoJson(awards).addTo(grants);
+    var events = L.geoJson(fonFeatures).bindPopup(feature.properties.Quote);
+    var other = L.geoJson(unregistered);
+    var grants = L.geoJson(awards);
 
     var assoc = new L.LayerGroup();
     var ward = new L.LayerGroup();
