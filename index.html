@@ -35,29 +35,24 @@
     };
     
     var events = new L.LayerGroup();
-    
     var other = new L.LayerGroup();
-    
     var grants = new L.LayerGroup();
     
     var fonFeatures = {{site.data.registered-activities|jsonify}};
-    
     var unregistered = {{site.data.unregistered-events|jsonify}};
-  
     var grant-awards = {{site.data.grant-awards|jsonify}};
     
     L.geoJson(fonFeatures, {onEachFeature: onEachFeature}).addTo(events);
+    L.geoJson(unregistered, {onEachFeature: onEachFeature}).addTo(other);
+    L.geoJson(grant-awards, {onEachFeature: onEachFeature}).addTo(grants);
 
     var assoc = new L.LayerGroup();
-    
     var ward = new L.LayerGroup();
     
     var neighbourhoods = {{site.data.kitchener-neighbourhoods|jsonify}};
-    
     var wards = {{site.data.ward-boundaries|jsonify}};
     
     L.geoJson(neighbourhoods, {onEachFeature: onEachFeature}).addTo(assoc);
-    
     L.geoJson(wards, {onEachFeature: onEachFeature}).addTo(ward);
     
     var baseLayers = {
