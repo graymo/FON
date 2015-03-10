@@ -36,7 +36,15 @@
     
     var events = new L.LayerGroup();
     
+    var other = new L.LayerGroup();
+    
+    var grants = new L.LayerGroup();
+    
     var fonFeatures = {{site.data.registered-activities|jsonify}};
+    
+    var unregistered = {{site.data.unregistered-events|jsonify}};
+  
+    var grant-awards = {{site.data.grant-awards|jsonify}};
     
     L.geoJson(fonFeatures, {onEachFeature: onEachFeature}).addTo(events);
 
@@ -58,7 +66,9 @@
     };
     
     var overlays = {
-      "Registered FON Events": events
+      "Registered FON Events": events,
+      "Other Events": other,
+      "Capital Improvement Grants": grants
     };
     
     L.control.layers(baseLayers, overlays).addTo(map);
