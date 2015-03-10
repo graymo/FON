@@ -24,6 +24,26 @@
       id: 'examples.map-i875mjb7'
     }).addTo(map);
     
+    function getColor(w) {
+      return w = 1  ? #8dd3c7 :
+             w = 2  ? #ffffb3 :
+             w = 3  ? #bebada :
+             w = 4  ? #fb8072 :
+             w = 5  ? #80b1d3 :
+             w = 6  ? #fdb462 :
+             w = 7  ? #b3de69 :
+             w = 8  ? #fccde5 :
+             w = 9  ? #d9d9d9 :
+             w = 10 ? #bc80bd :
+                      #ccebc5;
+    }
+    
+    function style(feature) {
+      return {
+        fillColor: getColor(feature.properties.WardNumber)
+      }
+    }
+    
     var fonFeatures = {{site.data.registered-activities|jsonify}};
     var unregistered = {{site.data.unregistered-events|jsonify}};
     var awards = {{site.data.grant-awards|jsonify}};
@@ -35,7 +55,7 @@
     var neighbourhoods = {{site.data.kitchener-neighbourhoods|jsonify}};
     var wards = {{site.data.ward-boundaries|jsonify}};
     
-    L.geoJson([neighbourhoods, wards]).addTo(map);
+    L.geoJson([neighbourhoods, wards, {style: style}]).addTo(map);
 
     //var baseLayers = {
     //  "Kitchener Wards": wards,
