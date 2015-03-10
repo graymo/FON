@@ -30,8 +30,8 @@
       layer.bindPopup(feature.properties.Activity + "<br>" + feature.properties.Location + "<br>" + feature.properties.Date + "<br>" + feature.properties.Neighbourhood + "<br>" + feature.properties.Quote)
       else if (feature.properties.NEIGHBOU00)
       layer.bindPopup(feature.properties.NEIGHBOU00)
-      else if (feature.properties.PLANNING_C)
-      layer.bindPopup(feature.properties.PLANNING_C)
+      else if (feature.properties.WardName)
+      layer.bindPopup(feature.properties.WardName)
     };
     
     var events = new L.LayerGroup();
@@ -42,19 +42,19 @@
 
     var assoc = new L.LayerGroup();
     
-    var plan = new L.LayerGroup();
+    var ward = new L.LayerGroup();
     
     var neighbourhoods = {{site.data.kitchener-neighbourhoods|jsonify}};
     
-    var plancomms = {{site.data.kitchener-plancomms|jsonify}};
+    var wards = {{site.data.ward-boundaries|jsonify}};
     
     L.geoJson(neighbourhoods, {onEachFeature: onEachFeature}).addTo(assoc);
     
-    L.geoJson(plancomms, {onEachFeature: onEachFeature}).addTo(plan);
+    L.geoJson(wards, {onEachFeature: onEachFeature}).addTo(ward);
     
     var baseLayers = {
-      "Neighbourhood Associations": assoc,
-      "Planning Communities": plan
+      "Wards": ward,
+      "Neighbourhood Associations": assoc
     };
     
     var overlays = {
