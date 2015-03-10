@@ -36,7 +36,7 @@
     var wards = {{site.data.ward-boundaries|jsonify}};
     
     var assoc = L.geoJson(neighbourhoods);
-    var wards = L.geoJson(wards, {style: style});
+    var wards = L.geoJson(wards, {style: style}).addTo(map);
     
     function getColor(w) {
       return w = 1  ? #8dd3c7 :
