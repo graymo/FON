@@ -660,7 +660,66 @@
                 "Neighbourhood": "Brock Street", 
                 "Date and Time": "February 28 2015;"
             }
+        }, 
+        {
+            "type": "Feature", 
+            "geometry": {
+                "type": "Point", 
+                "coordinates": [
+                    -80.4113816, 
+                    43.4412858
+                ]
+            }, 
+            "properties": {
+                "Activity": "Annual Easter Egg Hunt", 
+                "Neighbourhood": "Tremaine Park", 
+                "Date and Time": "2015-04-03"
+            }
+        }, 
+        {
+            "type": "Feature", 
+            "geometry": {
+                "type": "Point", 
+                "coordinates": [
+                    -80.4113816, 
+                    43.4412858
+                ]
+            }, 
+            "properties": {
+                "Activity": "Earth Day Neighbourhood Cleanup", 
+                "Neighbourhood": "Tremaine Park", 
+                "Date and Time": "2015-05-01"
+            }
+        }, 
+        {
+            "type": "Feature", 
+            "geometry": {
+                "type": "Point", 
+                "coordinates": [
+                    -80.4113816, 
+                    43.4412858
+                ]
+            }, 
+            "properties": {
+                "Activity": "Neighbourhood Garage Sale", 
+                "Neighbourhood": "Tremaine Park", 
+                "Date and Time": "2015-05-02"
+            }
+        }, 
+        {
+            "type": "Feature", 
+            "geometry": {
+                "type": "Point", 
+                "coordinates": [
+                    -80.4113816, 
+                    43.4412858
+                ]
+            }, 
+            "properties": {
+                "Activity": "Family BBQ", 
+                "Neighbourhood": "Tremaine Park", 
+                "Date and Time": "2015-06-01"
+            }
         }
     ]
 }
-
