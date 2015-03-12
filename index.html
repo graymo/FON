@@ -76,8 +76,8 @@
     }
     
     var fonFeatures = {{site.data.registered-activities|jsonify}};
-    var unregistered = {{site.data.unregistered-events|jsonify}};
-    var awards = {{site.data.grant-awards|jsonify}};
+    var unregistered = {{site.data.unregistered-activities|jsonify}};
+    var awards = {{site.data.capital-grants|jsonify}};
     
     var events = L.geoJson(fonFeatures);
     var other = L.geoJson(unregistered);
