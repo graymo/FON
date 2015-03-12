@@ -1,3 +1,5 @@
+---
+---
 <!DOCTYPE html>
 <html>
 <head>
@@ -5,16 +7,30 @@
   <meta charset="utf-8" />
 
   <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
-
+  
+  <style>
+    .leaflet-popup-content table {
+      border-collapse:collapse;
+      }
+    .leaflet-popup-content tr:nth-child(even) {background: #f7f7f7}
+    .leaflet-popup-content tr:nth-child(odd) {background: #FFF}
+    .leaflet-popup-content td,
+    .leaflet-popup-content th {
+      padding: 5px 10px;
+      border-color: #eee;
+      border-width: 1px;
+      border-style: solid;
+      font-size: 11px;}
+  </style>
+  
 </head>
 <body>
-  <div id="map" style="width: 600px; height: 400px"></div>
+  <div id="map" style="width: 600px; height: 600px"></div>
 
   <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
   <script>
 
-    var map = L.map('map').setView([43.43647,-80.45734], 12);
-
+    var map = L.map('map').setView([43.43379,-80.4685], 12);
     L.tileLayer('https://{s}.tiles.mapbox.com/v3/{id}/{z}/{x}/{y}.png', {
       maxZoom: 18,
       attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
@@ -22,361 +38,70 @@
         'Imagery © <a href="http://mapbox.com">Mapbox</a>',
       id: 'examples.map-i875mjb7'
     }).addTo(map);
-
-
-    function onEachFeature(feature, layer){
-      layer.bindPopup(feature.properties.Quote)};
-
-    var events = new L.LayerGroup();
-
-    var fonFeatures = [{
-            "type": "Feature", 
-            "geometry": {
-                "type": "Point", 
-                "coordinates": [
-                    -80.4897754, 
-                    43.4472017
-                ]
-            }, 
-            "properties": {
-                "Activity ": "Fall Family Fun Fair", 
-                "Location": "Benton Street Baptist Church, 90 Benton Street", 
-                "Date": "October 29 2014, 6:30-8:00pm", 
-                "Neighbourhood": "Benton Street Neighbourhood", 
-                "Quote": "A fun night for families of our community. Games, stories, contests, photo booth and snacks."
-            }
-        }, 
-        {
-            "type": "Feature", 
-            "geometry": {
-                "type": "Point", 
-                "coordinates": [
-                    -80.4896291, 
-                    43.4603196
-                ]
-            }, 
-            "properties": {
-                "Activity ": "Halloween Party", 
-                "Location": "310 Louisa Street", 
-                "Date": "October 24 2014, 7:30-11:30pm", 
-                "Neighbourhood": "Victoria Common - Mt. Hope", 
-                "Quote": "We have invited our clients, consultants, brokers who have worked with us, and friends we have met these last two years."
-            }
-        }, 
-        {
-            "type": "Feature", 
-            "geometry": {
-                "type": "Point", 
-                "coordinates": [
-                    -80.4113816, 
-                    43.4412858
-                ]
-            }, 
-            "properties": {
-                "Activity ": "Oktoberfest event at Chicopee  ", 
-                "Location": "William Lewis Street, then Chicopee Ski Resort", 
-                "Date": "October 18 2014", 
-                "Neighbourhood": "Tremaine Park", 
-                "Quote": "We celebrated Kitchener's German heritage by celebrating Oktoberfest as a group. Before the festivities, one of the neighbourhood families welcomed anyone and everyone into their home for dinner."
-            }
-        }, 
-        {
-            "type": "Feature", 
-            "geometry": {
-                "type": "Point", 
-                "coordinates": [
-                    -80.4157585, 
-                    43.4350711
-                ]
-            }, 
-            "properties": {
-                "Activity ": "Oktoberfest event at Chicopee  ", 
-                "Location": "Chicopee Ski Resort", 
-                "Date": "October 18 2014", 
-                "Neighbourhood": "Tremaine Park", 
-                "Quote": "We celebrated Kitchener's German heritage by celebrating Oktoberfest as a group. Before the festivities, one of the neighbourhood families welcomed anyone and everyone into their home for dinner."
-            }
-        }, 
-        {
-            "type": "Feature", 
-            "geometry": {
-                "type": "Point", 
-                "coordinates": [
-                    -80.4094674, 
-                    43.4417294
-                ]
-            }, 
-            "properties": {
-                "Activity ": "Annual Tremaine Park Tree Trimming", 
-                "Location": "At the Tremaine Park Christmas Tree", 
-                "Date": "November 23 2014", 
-                "Neighbourhood": "Tremaine park", 
-                "Quote": "Weather wasn't cooperating much, so when we saw a sunny break, we reached out to as many park families as we could to invite them for cookies, hot chocolate, candy canes, and festive tree decorating fun!"
-            }
-        }, 
-        {
-            "type": "Feature", 
-            "geometry": {
-                "type": "Point", 
-                "coordinates": [
-                    -80.4098214, 
-                    43.4405176
-                ]
-            }, 
-            "properties": {
-                "Activity ": "Colin's 3rd Annual Toy Drive for Anselma House", 
-                "Location": "Colin's House on Sims Estate Drive", 
-                "Date": "November 30 2014, 12:30pm", 
-                "Neighbourhood": "Edgewater Estates", 
-                "Quote": "Colin has been doing this for years now, and we often hear from others that he has inspired them to help the Anselma House specifically, or another charity of their choice. At the Toy Drive we always have a chance to meet new faces, and visit with familiar ones."
-            }
-        }, 
-        {
-            "type": "Feature", 
-            "geometry": {
-                "type": "Point", 
-                "coordinates": [
-                    -80.4991108, 
-                    43.4456983
-                ]
-            }, 
-            "properties": {
-                "Activity ": "Holiday Potluck and Annual General Meeting", 
-                "Location": "Victoria Park Pavilion", 
-                "Date": "November 23 2014, 6:00-9:00pm", 
-                "Neighbourhood": "Victoria Park Neighbourhood", 
-                "Quote": "Neighbours are starting to see this as an annual event to get together and connect with other residents. It also informs residents of some of the great work the VPNA has been up to and provides an opportunity for residents to provide feedback on suggested improvements, ideas, etc."
-            }
-        }, 
-        {
-            "type": "Feature", 
-            "geometry": {
-                "type": "Point", 
-                "coordinates": [
-                    -80.4991108, 
-                    43.4456983
-                ]
-            }, 
-            "properties": {
-                "Activity ": "Lecture - Harold Russell about his experience growing up in Victoria Park during World War Two", 
-                "Location": "Victoria Park Pavilion", 
-                "Date": "October 16 2014, 7:00-9:00pm", 
-                "Neighbourhood": "Victoria Park Neighbourhood ", 
-                "Quote": "Encourages neighbours to gather and learn about the history of the area/neighbourhood."
-            }
-        }, 
-        {
-            "type": "Feature", 
-            "geometry": {
-                "type": "Point", 
-                "coordinates": [
-                    -80.4293407, 
-                    43.4288773
-                ]
-            }, 
-            "properties": {
-                "Activity ": " Community Movie Night - Mr. Peabody and Sherman", 
-                "Location": "Centreville-Chicopee Community Centre", 
-                "Date": "November 6 2014, 5:30-8:30pm", 
-                "Neighbourhood": "Centreville Chicopee", 
-                "Quote": "Had new faces attend the event, as well as many people who have made these movie evenings a regular part of their attendance at the centre."
-            }
-        }, 
-        {
-            "type": "Feature", 
-            "geometry": {
-                "type": "Point", 
-                "coordinates": [
-                    -80.4098214, 
-                    43.4405176
-                ]
-            }, 
-            "properties": {
-                "Activity ": "1st Annual Lantern walk", 
-                "Location": "Colin's House on Sims Estate Drive", 
-                "Date": "December 15 2014, 6:30pm", 
-                "Neighbourhood": "Edgewater Estates", 
-                "Quote": "Kids brought glowsticks, flashlights and hot chocolate as we walked through the neighbourhood admiring the Christmas Lights"
-            }
-        }, 
-        {
-            "type": "Feature", 
-            "geometry": {
-                "type": "Point", 
-                "coordinates": [
-                    -80.503118, 
-                    43.4054688
-                ]
-            }, 
-            "properties": {
-                "Activity ": "Family Day Activities, inside and outside", 
-                "Location": "Max Becker Common (weather permitting) and Williamsburg Community Centre", 
-                "Date": "February 16 2015, 1:00-4:00pm", 
-                "Neighbourhood": "Williamsburg", 
-                "Quote": "Welcoming first time skaters and having freshly sharpened skates for them to borrow! Family Fun Photo studio, crafts, hot chocolate are the perfect invitations for neighbours."
-            }
-        }, 
-        {
-            "type": "Feature", 
-            "geometry": {
-                "type": "Point", 
-                "coordinates": [
-                    -80.5012671, 
-                    43.4057733
-                ]
-            }, 
-            "properties": {
-                "Activity ": "Family Day Activities, inside and outside", 
-                "Location": "Max Becker Common (weather permitting) and Williamsburg Community Centre", 
-                "Date": "February 16 2015, 1:00-4:00pm", 
-                "Neighbourhood": "Williamsburg", 
-                "Quote": "Welcoming first time skaters and having freshly sharpened skates for them to borrow! Family Fun Photo studio, crafts, hot chocolate are the perfect invitations for neighbours."
-            }
-        }, 
-        {
-            "type": "Feature", 
-            "geometry": {
-                "type": "Point", 
-                "coordinates": [
-                    -80.4779725, 
-                    43.4513925
-                ]
-            }, 
-            "properties": {
-                "Activity ": "Soup Stock", 
-                "Location": "Brubacher Green", 
-                "Date": "November 2 2014,  6:00-8:00pm", 
-                "Neighbourhood": "Central Frederick", 
-                "Quote": "It was a fall celebration where everyone was invited to the Brubacher Green Park and to bring along with them their favourite soup and then we had a neighbourhood potluck sharing everyone's soups."
-            }
-        }, 
-        {
-            "type": "Feature", 
-            "geometry": {
-                "type": "Point", 
-                "coordinates": [
-                    -80.5158848, 
-                    43.4063679
-                ]
-            }, 
-            "properties": {
-                "Activity ": "Community Fun Fair", 
-                "Location": "WT Townshend Public School ", 
-                "Date": "February 28 2015, 11:00am-4:00pm", 
-                "Neighbourhood": "Laurentian West", 
-                "Quote": "Free event that would bring our community together in the winter! We approached different organizations to ask them to host the activities."
-            }
-        }, 
-        {
-            "type": "Feature", 
-            "geometry": {
-                "type": "Point", 
-                "coordinates": [
-                    -80.5073496, 
-                    43.4544283
-                ]
-            }, 
-            "properties": {
-                "Activity ": "Skating Party ", 
-                "Location": "King Edward School Downfield Rink", 
-                "Date": "February 8 2015, 3:00-7:00pm", 
-                "Neighbourhood": "Cherry Park ", 
-                "Quote": "We had a skating party with tobogganing, snow shoeing, hockey shootout challenges, curling, hot chocolate, and hot dogs."
-            }
-        }, 
-        {
-            "type": "Feature", 
-            "geometry": {
-                "type": "Point", 
-                "coordinates": [
-                    -80.4976912, 
-                    43.4474675
-                ]
-            }, 
-            "properties": {
-                "Activity ": "Family Day Weekend Sledding and Skating Party", 
-                "Location": "Victoria Park Commons", 
-                "Date": "February 14 2015, 1:00-3:00pm", 
-                "Neighbourhood": "Victoria Park", 
-                "Quote": "Helped connect neighbours with neighbours who might not otherwise have reason to do so."
-            }
-        }, 
-        {
-            "type": "Feature", 
-            "geometry": {
-                "type": "Point", 
-                "coordinates": [
-                    -80.4505083, 
-                    43.4479761
-                ]
-            }, 
-            "properties": {
-                "Activity ": "Halloween Fun", 
-                "Location": "Stanley Park Community Centre", 
-                "Date": "October 25 2014, 1:00-3:00pm", 
-                "Neighbourhood": "Stanley Park", 
-                "Quote": "Provided community members with a place to enjoy Halloween safely as well as to introduce neighbours to each other.  By using the community centre helped create awareness of the building and all the services it can offer to the community."
-            }
-        }, 
-        {
-            "type": "Feature", 
-            "geometry": {
-                "type": "Point", 
-                "coordinates": [
-                    -80.4505083, 
-                    43.4479761
-                ]
-            }, 
-            "properties": {
-                "Activity ": "Family Movie Night", 
-                "Location": "Stanley Park Community Centre", 
-                "Date": "October 14 2014, 6:00-9:00pm", 
-                "Neighbourhood": "Stanley Park", 
-                "Quote": "Provided a free space that was accessible to all children in the community regardless of ability.  The event was free making it accessible to people of all socio-economic statuses."
-            }
-        }, 
-        {
-            "type": "Feature", 
-            "geometry": {
-                "type": "Point", 
-                "coordinates": [
-                    -80.4505083, 
-                    43.4479761
-                ]
-            }, 
-            "properties": {
-                "Activity ": "First Annual Christmas Party", 
-                "Location": "Stanley Park Community Centre", 
-                "Date": "November 29 2014, 1:30-3:30pm", 
-                "Neighbourhood": "Stanley Park", 
-                "Quote": "This gathering produced a large number of new faces to the community centre that we had not previously seen.  It provided opportunities to seek out information and suggestions from community members and for community members to see what their community centre as to offer."
-            }
-        }, 
-        {
-            "type": "Feature", 
-            "geometry": {
-                "type": "Point", 
-                "coordinates": [
-                    -80.4505083, 
-                    43.4479761
-                ]
-            }, 
-            "properties": {
-                "Activity ": "2nd Annual Family Day Fun", 
-                "Location": "Stanley Park Community Centre", 
-                "Date": "February 16 2015", 
-                "Neighbourhood": "Stanley Park", 
-                "Quote": "Provided an event for families to come together to engage in crafts and swimming with their children or for individuals to come out and meet other people in their community."
-            }
-        }];
-    L.geoJson(fonFeatures, {onEachFeature: onEachFeature}).addTo(events);
-
-
-    var overlays = {"Registered": events};
-
-    L.control.layers(overlays).addTo(map);
-
+    
+    function getColor(d) {
+			return d > 1000 ? '#800026' :
+			       d > 500  ? '#BD0026' :
+			       d > 200  ? '#E31A1C' :
+			       d > 100  ? '#FC4E2A' :
+			       d > 50   ? '#FD8D3C' :
+			       d > 20   ? '#FEB24C' :
+			       d > 10   ? '#FED976' :
+			                  '#FFEDA0';
+		}
+		
+		function style(feature) {
+			return {
+				weight: 2,
+				opacity: 1,
+				color: 'white',
+				dashArray: '3',
+				fillOpacity: 0.7,
+				fillColor: getColor(feature.properties.density)
+			};
+		}
+		
+		var geojson;
+		
+    function onEachFeature(feature, layer) {
+      // does this feature have a property named popupContent?
+      if (feature.properties) {
+        html = '<table>'
+        $.each(feature.properties, function( k, v ) {
+          html += '<tr><th>' + k + '</td><td>' + v + '</td></tr>';
+        });
+        html+= '</table>';
+        layer.bindPopup(html, {closeButton:false});
+      }
+    }
+    
+    var fonFeatures = {{site.data.registered-activities|jsonify}};
+    var unregistered = {{site.data.unregistered-events|jsonify}};
+    var awards = {{site.data.grant-awards|jsonify}};
+    
+    var events = L.geoJson(fonFeatures);
+    var other = L.geoJson(unregistered);
+    var grants = L.geoJson(awards);
+    
+    var neighbourhoods = {{site.data.kitchener-neighbourhoods|jsonify}};
+    var wards = {{site.data.ward-boundaries|jsonify}};
+    
+    var assoc = L.geoJson(neighbourhoods);
+    var wards = L.geoJson(wards);
+    
+    var baseLayers = {
+      "Kitchener Wards": wards,
+      "Neighbourhood Associations": assoc
+    };
+    
+    var overlays = {
+      "Registered FON Events": events,
+      "Other Events": other,
+      "Neighbourhood Improvement Grants": grants
+    };
+    
+    L.control.layers(baseLayers, overlays).addTo(map);
+  
   </script>
 </body>
 </html>
-
