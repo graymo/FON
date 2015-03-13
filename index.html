@@ -48,7 +48,9 @@ title: Home
       if (feature.properties && feature.properties.WardName) {
         layer.bindPopup(feature.properties.WardName)}
       else if (feature.properties && feature.properties.Quote) {
-        layer.bindPopup(feature.properties.Quote)
+        layer.bindPopup(feature.properties.Quote)}
+      else if (feature.properties && feature.properties.description) {
+        layer.bindPopup(feature.properties.description)
       }
     }
     
