@@ -50,7 +50,8 @@ title: Home
       else if (feature.properties && feature.properties.Quote) {
         layer.bindPopup(feature.properties.Quote)}
       else if (feature.properties && feature.properties.description) {
-        layer.bindPopup(feature.properties.description)
+        layer.bindPopup(feature.properties.description)}
+        else {layer.bindPopup(feature.properties.Activity)
       }
     }
     
@@ -59,7 +60,7 @@ title: Home
     var awards = {{site.data.capital-grants|jsonify}};
     
     var events = L.geoJson(fonFeatures, {onEachFeature: onEachFeature});
-    var other = L.geoJson(unregistered);
+    var other = L.geoJson(unregistered, {onEachFeature: onEachFeature});
     var grants = L.geoJson(awards, {onEachFeature: onEachFeature});
     
     var wards = {{site.data.ward-boundaries|jsonify}};
