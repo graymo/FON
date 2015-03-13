@@ -54,15 +54,19 @@ title: Home
         else {layer.bindPopup(feature.properties.Activity)
       }
     }
-    var markers = new L.MarkerClusterGroup().addTo(map);
     
     var fonFeatures = {{site.data.registered-activities|jsonify}};
     var unregistered = {{site.data.unregistered-activities|jsonify}};
     var awards = {{site.data.capital-grants|jsonify}};
     
+    var markers = new L.MarkerClusterGroup();
+    
     var events = L.geoJson(fonFeatures, {onEachFeature: onEachFeature});
-    var other = L.geoJson(unregistered, {onEachFeature: onEachFeature}).addTo(markers);
+    markers.addLayer(events);
+    var other = L.geoJson(unregistered, {onEachFeature: onEachFeature});
     var grants = L.geoJson(awards, {onEachFeature: onEachFeature});
+    
+    
     
     var wards = {{site.data.ward-boundaries|jsonify}};
     
@@ -72,7 +76,7 @@ title: Home
     }).addTo(map);
     
     var overlays = {
-      "Registered FON Events": events,
+      "Registered FON Events": markers,
       "Other Events": other,
       "Neighbourhood Improvement Grants": grants
     };
