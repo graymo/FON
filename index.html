@@ -40,14 +40,16 @@
     }).addTo(map);
     
     function getColor(w) {
-			return w == 1000 ? '#800026' :
-			       w == 500  ? '#BD0026' :
-			       w == 200  ? '#E31A1C' :
-			       w == 100  ? '#FC4E2A' :
-			       w == 50   ? '#FD8D3C' :
-			       w == 20   ? '#FEB24C' :
-			       w == 10   ? '#FED976' :
-			                  '#FFEDA0';
+			return w == 10 ? '#ffffb3' :
+			       w == 9  ? '#bebada' :
+			       w == 8  ? '#fb8072' :
+			       w == 7  ? '#80b1d3' :
+			       w == 6  ? '#fdb462' :
+			       w == 5  ? '#b3de69' :
+			       w == 4  ? '#fccde5' :
+			       w == 3  ? '#d9d9d9' :
+			       w == 2  ? '#bc80bd' :
+			       w == 1  ? '#8dd3c7' ;
 		}
 		
 		function style(feature) {
