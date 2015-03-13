@@ -2,31 +2,6 @@
 layout: default
 title: Map
 ---
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Kitchener Festival of Neighbourhoods</title>
-  <meta charset="utf-8" />
-
-  <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
-  
-  <style>
-    .leaflet-popup-content table {
-      border-collapse:collapse;
-      }
-    .leaflet-popup-content tr:nth-child(even) {background: #f7f7f7}
-    .leaflet-popup-content tr:nth-child(odd) {background: #FFF}
-    .leaflet-popup-content td,
-    .leaflet-popup-content th {
-      padding: 5px 10px;
-      border-color: #eee;
-      border-width: 1px;
-      border-style: solid;
-      font-size: 11px;}
-  </style>
-  
-</head>
-<body>
   <div id="map" style="width: 600px; height: 650px"></div>
 
   <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
@@ -101,5 +76,3 @@ title: Map
     L.control.layers(overlays).addTo(map);
   
   </script>
-</body>
-</html>
