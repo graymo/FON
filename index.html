@@ -64,7 +64,8 @@ title: Home
     var grants = L.geoJson(awards, {onEachFeature: onEachFeature});
     
     var markers = new L.MarkerClusterGroup();
-    markers.addLayer([events, other, grants]);
+    markers.addLayers([events, other, grants]);
+    map.addLayer(markers);
     
     var wards = {{site.data.ward-boundaries|jsonify}};
     
