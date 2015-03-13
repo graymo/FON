@@ -39,14 +39,14 @@
       id: 'examples.map-i875mjb7'
     }).addTo(map);
     
-    function getColor(d) {
-			return d > 1000 ? '#800026' :
-			       d > 500  ? '#BD0026' :
-			       d > 200  ? '#E31A1C' :
-			       d > 100  ? '#FC4E2A' :
-			       d > 50   ? '#FD8D3C' :
-			       d > 20   ? '#FEB24C' :
-			       d > 10   ? '#FED976' :
+    function getColor(w) {
+			return w == 1000 ? '#800026' :
+			       w == 500  ? '#BD0026' :
+			       w == 200  ? '#E31A1C' :
+			       w == 100  ? '#FC4E2A' :
+			       w == 50   ? '#FD8D3C' :
+			       w == 20   ? '#FEB24C' :
+			       w == 10   ? '#FED976' :
 			                  '#FFEDA0';
 		}
 		
@@ -57,7 +57,7 @@
 				color: 'white',
 				dashArray: '3',
 				fillOpacity: 0.7,
-				fillColor: getColor(feature.properties.density)
+				fillColor: getColor(feature.properties.WardNumber)
 			};
 		}
 		
@@ -85,7 +85,7 @@
     
     var wards = {{site.data.ward-boundaries|jsonify}};
     
-    L.geoJson(wards).addTo(map);
+    geojson = L.geoJson(wards, {style: style}).addTo(map);
     
     var overlays = {
       "Registered FON Events": events,
