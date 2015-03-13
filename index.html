@@ -46,7 +46,9 @@ title: Home
 		
     function onEachFeature(feature, layer) {
       if (feature.properties && feature.properties.WardName) {
-        layer.bindPopup(feature.properties.WardName)
+        layer.bindPopup(feature.properties.WardName)}
+      else if (feature.properties && feature.properties.Quote) {
+        layer.bindPopup(feature.properties.Quote)
       }
     }
     
@@ -54,7 +56,7 @@ title: Home
     var unregistered = {{site.data.unregistered-activities|jsonify}};
     var awards = {{site.data.capital-grants|jsonify}};
     
-    var events = L.geoJson(fonFeatures);
+    var events = L.geoJson(fonFeatures, {onEachFeature: onEachFeature});
     var other = L.geoJson(unregistered);
     var grants = L.geoJson(awards);
     
