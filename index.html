@@ -25,12 +25,12 @@
   
 </head>
 <body>
-  <div id="map" style="width: 600px; height: 600px"></div>
+  <div id="map" style="width: 600px; height: 650px"></div>
 
   <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
   <script>
 
-    var map = L.map('map').setView([43.43379,-80.4685], 12);
+    var map = L.map('map').setView([43.43,-80.475], 12);
     L.tileLayer('https://{s}.tiles.mapbox.com/v3/{id}/{z}/{x}/{y}.png', {
       maxZoom: 18,
       attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
@@ -39,15 +39,18 @@
       id: 'examples.map-i875mjb7'
     }).addTo(map);
     
-    function getColor(d) {
-			return d > 1000 ? '#800026' :
-			       d > 500  ? '#BD0026' :
-			       d > 200  ? '#E31A1C' :
-			       d > 100  ? '#FC4E2A' :
-			       d > 50   ? '#FD8D3C' :
-			       d > 20   ? '#FEB24C' :
-			       d > 10   ? '#FED976' :
-			                  '#FFEDA0';
+    function getColor(w) {
+			return w == 10 ? '#ffffb3' :
+			       w == 9  ? '#bebada' :
+			       w == 8  ? '#fb8072' :
+			       w == 7  ? '#80b1d3' :
+			       w == 6  ? '#fdb462' :
+			       w == 5  ? '#b3de69' :
+			       w == 4  ? '#fccde5' :
+			       w == 3  ? '#d9d9d9' :
+			       w == 2  ? '#bc80bd' :
+			       w == 1  ? '#8dd3c7' :
+			                 '#ccebc5' ;
 		}
 		
 		function style(feature) {
@@ -57,7 +60,7 @@
 				color: 'white',
 				dashArray: '3',
 				fillOpacity: 0.7,
-				fillColor: getColor(feature.properties.density)
+				fillColor: getColor(feature.properties.WardNumber)
 			};
 		}
 		
@@ -76,23 +79,16 @@
     }
     
     var fonFeatures = {{site.data.registered-activities|jsonify}};
-    var unregistered = {{site.data.unregistered-events|jsonify}};
-    var awards = {{site.data.grant-awards|jsonify}};
+    var unregistered = {{site.data.unregistered-activities|jsonify}};
+    var awards = {{site.data.capital-grants|jsonify}};
     
     var events = L.geoJson(fonFeatures);
     var other = L.geoJson(unregistered);
     var grants = L.geoJson(awards);
     
-    var neighbourhoods = {{site.data.kitchener-neighbourhoods|jsonify}};
     var wards = {{site.data.ward-boundaries|jsonify}};
     
-    var assoc = L.geoJson(neighbourhoods);
-    var wards = L.geoJson(wards);
-    
-    var baseLayers = {
-      "Kitchener Wards": wards,
-      "Neighbourhood Associations": assoc
-    };
+    geojson = L.geoJson(wards, {style: style}).addTo(map);
     
     var overlays = {
       "Registered FON Events": events,
@@ -100,7 +96,7 @@
       "Neighbourhood Improvement Grants": grants
     };
     
-    L.control.layers(baseLayers, overlays).addTo(map);
+    L.control.layers(overlays).addTo(map);
   
   </script>
 </body>
