@@ -83,16 +83,9 @@
     var other = L.geoJson(unregistered);
     var grants = L.geoJson(awards);
     
-    var neighbourhoods = {{site.data.kitchener-neighbourhoods|jsonify}};
     var wards = {{site.data.ward-boundaries|jsonify}};
     
-    var assoc = L.geoJson(neighbourhoods);
-    var wards = L.geoJson(wards);
-    
-    var baseLayers = {
-      "Kitchener Wards": wards,
-      "Neighbourhood Associations": assoc
-    };
+    L.geoJson(wards).addTo(map);
     
     var overlays = {
       "Registered FON Events": events,
@@ -100,7 +93,7 @@
       "Neighbourhood Improvement Grants": grants
     };
     
-    L.control.layers(baseLayers, overlays).addTo(map);
+    L.control.layers(overlays).addTo(map);
   
   </script>
 </body>
