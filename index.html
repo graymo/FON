@@ -60,7 +60,7 @@ title: Home
     
     var events = L.geoJson(fonFeatures, {onEachFeature: onEachFeature});
     var other = L.geoJson(unregistered);
-    var grants = L.geoJson(awards);
+    var grants = L.geoJson(awards, {onEachFeature: onEachFeature});
     
     var wards = {{site.data.ward-boundaries|jsonify}};
     
