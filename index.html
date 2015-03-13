@@ -54,18 +54,15 @@ title: Home
         else {layer.bindPopup(feature.properties.Activity)
       }
     }
+    var markers = new L.MarkerClusterGroup().addTo(map);
     
     var fonFeatures = {{site.data.registered-activities|jsonify}};
     var unregistered = {{site.data.unregistered-activities|jsonify}};
     var awards = {{site.data.capital-grants|jsonify}};
     
     var events = L.geoJson(fonFeatures, {onEachFeature: onEachFeature});
-    var other = L.geoJson(unregistered, {onEachFeature: onEachFeature});
+    var other = L.geoJson(unregistered, {onEachFeature: onEachFeature}).addTo(markers);
     var grants = L.geoJson(awards, {onEachFeature: onEachFeature});
-    
-    var markers = new L.MarkerClusterGroup();
-    markers.addLayer(other);
-    map.addLayer(markers);
     
     var wards = {{site.data.ward-boundaries|jsonify}};
     
