@@ -67,11 +67,7 @@ title: Home
     var wards = {{site.data.ward-boundaries|jsonify}};
     
     geojson = L.geoJson(wards, {
-    	style: style,
-      onEachFeature: function (feature) {
-        feature.bindPopup(feature.properties.WardName);
-      }
-    }).addTo(map);
+    	style: style}).addTo(map);
     
     var overlays = {
       "Registered FON Events": events,
