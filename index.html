@@ -46,13 +46,14 @@ title: Home
 		
     function onEachFeature(feature, layer) {
       // does this feature have a property named popupContent?
-      if (feature.properties) {
-        html = '<table>'
-        $.each(feature.properties, function( k, v ) {
-          html += '<tr><th>' + k + '</td><td>' + v + '</td></tr>';
-        });
-        html+= '</table>';
-        layer.bindPopup(html, {closeButton:false});
+      if (feature.property.Activity && feature.properties.Quote) {
+        layer.bindPopup(feature.properties.Quote)
+      else if (feature.properties.WardName)
+        layer.bindPopup(feature.properties.WardName)
+      else if (feature.properties.description)
+        layer.bindPopup(feature.properties.description)
+      else if (feature.properties.Activity)
+        layer.bindPopup(feature.properties.Activity)
       }
     }
     
@@ -60,14 +61,16 @@ title: Home
     var unregistered = {{site.data.unregistered-activities|jsonify}};
     var awards = {{site.data.capital-grants|jsonify}};
     
-    var events = L.geoJson(fonFeatures);
-    var other = L.geoJson(unregistered);
-    var grants = L.geoJson(awards);
+    var events = L.geoJson(fonFeatures, {onEachFeature: onEachFeature});
+    var other = L.geoJson(unregistered, {onEachFeature: onEachFeature});
+    var grants = L.geoJson(awards, {onEachFeature: onEachFeature});
     
     var wards = {{site.data.ward-boundaries|jsonify}};
     
     geojson = L.geoJson(wards, {
-    	style: style}).addTo(map);
+    	style: style,
+    	onEachFeature: onEachFeature
+    }).addTo(map);
     
     var overlays = {
       "Registered FON Events": events,
