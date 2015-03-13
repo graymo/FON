@@ -6,12 +6,6 @@ title: Home
   <div id="map" style="width: 600px; height: 650px"></div>
 
   <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
-  
-  
-	<link rel="stylesheet" href="../dist/MarkerCluster.css" />
-	<link rel="stylesheet" href="../dist/MarkerCluster.Default.css" />
-	<script src="../dist/leaflet.markercluster-src.js"></script>
-	
   <script>
 
     var map = L.map('map').setView([43.43,-80.475], 12);
@@ -65,9 +59,7 @@ title: Home
     var unregistered = {{site.data.unregistered-activities|jsonify}};
     var awards = {{site.data.capital-grants|jsonify}};
     
-    var markers = new L.MarkerClusterGroup();
-    
-    var events = L.geoJson(fonFeatures, {onEachFeature: onEachFeature}).addTo(markers);
+    var events = L.geoJson(fonFeatures, {onEachFeature: onEachFeature});
     var other = L.geoJson(unregistered, {onEachFeature: onEachFeature});
     var grants = L.geoJson(awards, {onEachFeature: onEachFeature});
     
@@ -81,7 +73,7 @@ title: Home
     }).addTo(map);
     
     var overlays = {
-      "Registered FON Events": markers,
+      "Registered FON Events": events,
       "Other Events": other,
       "Neighbourhood Improvement Grants": grants
     };
