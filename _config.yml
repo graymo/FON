@@ -7,15 +7,15 @@ permalink:        pretty
 relative_permalinks: true
 
 # Setup
-title:            Festival of Neighbourhoods
-tagline:          City of Kitchener, 2015
-description:      Celebrate your neighbourhood!
+title:            'Festival of Neighbourhoods'
+tagline:          'City of Kitchener, 2015'
+description:      'Celebrate your neighbourhood!'
 url:              http://graymo.github.io/FON
-baseurl:          /FON
+baseurl:          '/FON'
 
 author:
   name:           'Graeme Ruck'
-  url:            
+  url:            http://waterlooregion.org
 
 paginate:         5
 
