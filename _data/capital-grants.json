@@ -326,14 +326,13 @@
                 "geometry": {
                     "type": "Point",
                     "coordinates": [
-                        -80.499646,
-                        43.422943
+                        -80.500142,
+                        43.442007
                     ]
                 },
                 "properties": {
                 "name": "Brock Street Neighbourhood",
                 "description": "<b> Postal Code:</b> <br><b> Year:</b> 2014<br><b>What Has Been Done With the $21, 000 Capital Improvement Grant?:</b>  In consultation <br>",
-                "string": ""
             }
         }
         
