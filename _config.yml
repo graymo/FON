@@ -12,7 +12,6 @@ tagline:          'City of Kitchener, 2015'
 description:      'Creating connections, growing traditions!'
 url:              http://graymo.github.io/FON
 baseurl:          '/FON'
-about:            '/FON/about'
 
 author:
   name:           'Graeme Ruck'
