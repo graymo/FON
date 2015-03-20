@@ -111,6 +111,7 @@
             "properties": {
                 "name": "Asgard Green/Cherry St",
                 "description": "<b> Postal Code:</b> N2G 2C9 <br>\n<b> Year:</b> 2001<br>\n<b>What Has Been Done With the $10, 000 Capital Improvement Grant?:</b>  Green space improvements and accessible walking trail <br>",
+            }
         },
         {
             "type": "Feature",
@@ -293,7 +294,6 @@
                 "name": "Brock Street Neighbourhood",
                 "description": "<b> Postal Code:</b> N2M 1X3 <br><b> Year:</b> 2014<br><b>What Has Been Done With the $21, 000 Capital Improvement Grant?:</b>  In consultation <br>",
             }
-        }
-        
+        } 
     ]
 }
