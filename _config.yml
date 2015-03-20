@@ -9,7 +9,7 @@ relative_permalinks: true
 # Setup
 title:            'Festival of Neighbourhoods'
 tagline:          'City of Kitchener, 2015'
-description:      'Celebrate your neighbourhood!'
+description:      'Creating connections, growing traditions!'
 url:              http://graymo.github.io/FON
 baseurl:          '/FON'
 
