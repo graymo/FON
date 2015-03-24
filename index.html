@@ -48,7 +48,10 @@ title: home
 		
     function onEachFeature(feature, layer) {
       if (feature.properties && feature.properties.WardName) {
-        layer.bindPopup(feature.properties.WardName)}
+        layer.bindPopup(feature.properties.WardName);
+      	layer.on('mouseover', function (e) {this.openPopup();})
+      	layer.on('mouseout', function (e) {this.closePopup();})
+      }
       else if (feature.properties && feature.properties.Quote) {
         layer.bindPopup('<b>Activity: </b>' + feature.properties.Activity + '<br><b>Location: </b>' + feature.properties.Location + '<br><b>Date: </b>' + '<br><br><i>"' + feature.properties.Quote + '"</i>')}
       else if (feature.properties && feature.properties.description) {
