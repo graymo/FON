@@ -49,7 +49,7 @@ title: home
     function onEachFeature(feature, layer) {
       if (feature.properties && feature.properties.WardName) {
         layer.bindPopup(feature.properties.WardName);
-      	layer.on('mouseover', function (e) {this.openPopup();})
+      	layer.on('mouseover', function (e) {this.openPopup(polygon.getBounds().getCenter(););})
       	layer.on('mouseout', function (e) {this.closePopup();})
       }
       else if (feature.properties && feature.properties.Quote) {
