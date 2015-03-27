@@ -83,46 +83,6 @@ title: home
       "Neighbourhood Improvement Grants": grants
     };
     
-    var legend = L.control({position: 'bottomright'});
-
-        legend.onAdd = function (map) {
-
-        var div = L.DomUtil.create('div', 'info legend'),
-          grades = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
-          labels = ['Ward'];
-
-    // loop through our density intervals and generate a label with a colored square for each interval
-        for (var i = 0; i < grades.length; i++) {
-          from = 
-          div.innerHTML =
-            '<i style="background:' + getColor(grades[i]) + '"></i> ' +
-            grades[i] + '<br>');
-          }
-          return div;
-        };
-//incomplete above  and below see http://stackoverflow.com/questions/21307647/leaflet-adding-a-legend-title
-    legend.addTo(map);
-var legend = L.control({position: 'topleft'});  
-    legend.onAdd = function (map) {
-
-    var div = L.DomUtil.create('div', 'info legend'),
-        grades = [50, 100, 150, 200, 250, 300],
-        labels = ['<strong> THE TITLE </strong>'],
-        from, to;
-
-    for (var i = 0; i < grades.length; i++) {
-        from = grades [i];
-        to = grades[i+1]-1;
-
-    labels.push(
-        '<i style="background:' + getColor(from + 1) + '"></i> ' +
-        from + (to ? '&ndash;' + to : '+'));
-        }
-        div.innerHTML = labels.join('<br>');
-        return div;
-
-
-        };    
     L.control.layers(overlays).addTo(map);
   
   </script>
