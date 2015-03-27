@@ -71,25 +71,6 @@ title: home
     
     
     var wards = {{site.data.ward-boundaries|jsonify}};
-    
-    var legend = L.control({position: 'bottomright'});
-      legend.onAdd = function (map) {
-
-        var div = L.DomUtil.create('div', 'info legend'),
-          grades = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
-          labels = ['Ward'],
-          from, to;
-
-        for (var i = 0; i < grades.length; i++) {
-          from = grades [i];
-          to = grades [i+1]-1;
-          
-        labels.push(
-          '<i style="background:' + getColor(from + 1) + '"></i> ' + from + (to ? '&ndash;' + to : '+'));
-        }
-          div.innerHTML = labels.join('<br>');
-          return div;
-        };
 
     geojson = L.geoJson(wards, {
     	style: style,
