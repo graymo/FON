@@ -10,9 +10,10 @@ title: home
   <div id="map" style="height: 650px"></div>
   
   <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+  
   <script>
     var map = L.map('map').setView([43.43,-80.475], 12);
-    L.tileLayer('https://{s}.tiles.mapbox.com/v3/{id}/{z}/{x}/{y}.png', {
+      L.tileLayer('https://{s}.tiles.mapbox.com/v3/{id}/{z}/{x}/{y}.png', {
       maxZoom: 18,
       attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
         '<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
@@ -45,7 +46,7 @@ title: home
 			};
 		}
 		
-		var geojson;
+    var geojson;
 		
     function onEachFeature(feature, layer) {
       if (feature.properties && feature.properties.WardName) {
@@ -69,28 +70,39 @@ title: home
     var other = L.geoJson(unregistered, {onEachFeature: onEachFeature});
     var grants = L.geoJson(awards, {onEachFeature: onEachFeature});
     
-    
-    
     var wards = {{site.data.ward-boundaries|jsonify}};
-
+    
     geojson = L.geoJson(wards, {
-    	style: style,
-    	onEachFeature: onEachFeature
+      style: style,
+      onEachFeature: onEachFeature
     }).addTo(map);
     
-    var legend = L.control({position: 'topright'});
+    var overlays = {
+      "Registered FON Events": events,
+      "Other Events": other,
+      "Neighbourhood Improvement Grants": grants
+    };
     
-    legend.onAdd = function (map) {
-      
-      var div = L.DomUtil.create('div', 'info legend');
-      
-        div.innerHTML += '<i type="checkbox" id=' +
-          events + '"></i>' + 'Registered Events' + '<br/>';
-    }
+    L.control.layers(overlays).addTo(map);
     
-    return div;
-  };
-  
-  legend.addTo(map);
-  
+    var legend = L.control({position: 'bottomright'});
+    
+      legend.onAdd = function (map) {
+    
+      var div = L.DomUtil.create('div', 'info legend'),
+        grades = [1,2,3,4,5,6,7,8,9,10],
+        labels = [];
+    
+      // loop through our density intervals and generate a label with a colored square for each interval
+      for (var i = 0; i < grades.length; i++) {
+        div.innerHTML +=
+            '<i style="background:' + getColor(grades[i]) + '"></i> ' +
+            grades[i] + (grades[i + 1] ? '<br>');
+      }
+    
+      return div;
+      };
+    
+    legend.addTo(map);
+    
   </script>
