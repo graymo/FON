@@ -46,8 +46,6 @@ title: home
 			};
 		}
 		
-    var geojson;
-		
     function onEachFeature(feature, layer) {
       if (feature.properties && feature.properties.WardName) {
         layer.bindPopup(feature.properties.WardName);
@@ -72,7 +70,7 @@ title: home
     
     var wards = {{site.data.ward-boundaries|jsonify}};
     
-    geojson = L.geoJson(wards, {
+    var geojson = L.geoJson(wards, {
       style: style,
       onEachFeature: onEachFeature
     }).addTo(map);
