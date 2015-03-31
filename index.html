@@ -78,12 +78,20 @@ title: home
     	onEachFeature: onEachFeature
     }).addTo(map);
     
-    var overlays = {
-      "Registered FON Events": events,
-      "Other Events": other,
-      "Neighbourhood Improvement Grants": grants
-    };
+    var legend = L.control({position: 'topright'});
     
-    L.control.layers(overlays).addTo(map);
+    legend.onAdd = function (map) {
+      
+      var div = L.DomUtil.create('div', 'info legend');
+      
+      datasets.map(function(dataset) {
+        div.innerHTML += '<input type="checkbox" id="' +
+          events + '></input>' + 'Registered Events' + '<br/>'
+    });
+    
+    return div;
+  };
+  
+  legend.addTo(map);
   
   </script>
