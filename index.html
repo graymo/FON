@@ -84,10 +84,9 @@ title: home
       
       var div = L.DomUtil.create('div', 'info legend');
       
-      datasets.map(function(dataset) {
         div.innerHTML += '<input type="checkbox" id="' +
-          events + '></input>' + 'Registered Events' + '<br/>'
-    });
+          events + '></input>' + 'Registered Events' + '<br/>';
+    }
     
     return div;
   };
