@@ -17,7 +17,7 @@
         "date": "2014-10-29", 
         "time": "6:30pm-8:00pm", 
         "neighbourhood": "Benton Street Neighbourhood", 
-        "description": "A fun night for families of our community. Games, stories, contests, photo booth and snacks.", 
+        "description": "A fun night for families of our community. Games, stories, contests, photo booth and snacks.",
         "popupContent": "<b>Activity:</b> Fall Family Fun Fair<br><b>Location:</b> 90 Benton Street at Benton Street Baptist Church<br><b>Neighbourhood:</b> Benton Street Neighbourhood<br><b>Date:</b> 2014-10-29<br><b>Time:</b> 6:30pm-8:00pm<br><b>Description:</b> <i>\"A fun night for families of our community. Games, stories, contests, photo booth and snacks.\"</i>"
       }
     }, 
@@ -72,21 +72,13 @@
       }, 
       "properties": {
         "postalCode": "N2A 4L6", 
-        "activity": "Annual Tremaine Park Tree Trimming
-
-
-
-", 
+        "activity": "Annual Tremaine Park Tree Trimming", 
         "location": "At the Tremaine park Christmas Tree", 
         "date": "2014-11-23", 
         "time": "", 
         "neighbourhood": "Tremaine Park", 
         "description": "Weather wasn't cooperating much, so when we saw a sunny break, we reached out to as many park families as we could to invite them for cookies, hot chocolate, candy canes, and festive tree decorating fun!", 
-        "popupContent": "<b>Activity:</b> Annual Tremaine Park Tree Trimming
-
-
-
-<br><b>Location:</b> At the Tremaine park Christmas Tree<br><b>Neighbourhood:</b> Tremaine Park<br><b>Date:</b> 2014-11-23<br><b>Time:</b> <br><b>Description:</b> <i>\"Weather wasn't cooperating much, so when we saw a sunny break, we reached out to as many park families as we could to invite them for cookies, hot chocolate, candy canes, and festive tree decorating fun!\"</i>"
+        "popupContent": "<b>Activity:</b> Annual Tremaine Park Tree Trimming<br><b>Location:</b> At the Tremaine park Christmas Tree<br><b>Neighbourhood:</b> Tremaine Park<br><b>Date:</b> 2014-11-23<br><b>Time:</b> <br><b>Description:</b> <i>\"Weather wasn't cooperating much, so when we saw a sunny break, we reached out to as many park families as we could to invite them for cookies, hot chocolate, candy canes, and festive tree decorating fun!\"</i>"
       }
     }, 
     {
@@ -180,15 +172,13 @@
       }, 
       "properties": {
         "postalCode": "N2A 4L5", 
-        "activity": "1st Annual Lantern Walk
-", 
+        "activity": "1st Annual Lantern Walk", 
         "location": "Colin's House on Sims Estate Dr", 
         "date": "2014-12-15", 
         "time": "6.30pm", 
         "neighbourhood": "Edgewater Estates", 
         "description": "Kids brought glowsticks, flashlights and hot chocolate as we walked through the neighbourhood admiring the Christmas Lights.", 
-        "popupContent": "<b>Activity:</b> 1st Annual Lantern Walk
-<br><b>Location:</b> Colin's House on Sims Estate Dr<br><b>Neighbourhood:</b> Edgewater Estates<br><b>Date:</b> 2014-12-15<br><b>Time:</b> 6.30pm<br><b>Description:</b> <i>\"Kids brought glowsticks, flashlights and hot chocolate as we walked through the neighbourhood admiring the Christmas Lights.\"</i>"
+        "popupContent": "<b>Activity:</b> 1st Annual Lantern Walk<br><b>Location:</b> Colin's House on Sims Estate Dr<br><b>Neighbourhood:</b> Edgewater Estates<br><b>Date:</b> 2014-12-15<br><b>Time:</b> 6.30pm<br><b>Description:</b> <i>\"Kids brought glowsticks, flashlights and hot chocolate as we walked through the neighbourhood admiring the Christmas Lights.\"</i>"
       }
     }, 
     {
@@ -287,10 +277,8 @@
         "date": "2015-02-14", 
         "time": "1pm-3pm", 
         "neighbourhood": "Victoria Park", 
-        "description": "Helped connect neighbours with neighbours who might not otherwise have reason to do so.
-", 
-        "popupContent": "<b>Activity:</b> Family Day Weekend Sledding and Skating Party<br><b>Location:</b> Victoria Park Commons<br><b>Neighbourhood:</b> Victoria Park<br><b>Date:</b> 2015-02-14<br><b>Time:</b> 1pm-3pm<br><b>Description:</b> <i>\"Helped connect neighbours with neighbours who might not otherwise have reason to do so.
-\"</i>"
+        "description": "Helped connect neighbours with neighbours who might not otherwise have reason to do so.", 
+        "popupContent": "<b>Activity:</b> Family Day Weekend Sledding and Skating Party<br><b>Location:</b> Victoria Park Commons<br><b>Neighbourhood:</b> Victoria Park<br><b>Date:</b> 2015-02-14<br><b>Time:</b> 1pm-3pm<br><b>Description:</b> <i>\"Helped connect neighbours with neighbours who might not otherwise have reason to do so.\"</i>"
       }
     }, 
     {
@@ -664,15 +652,13 @@
       }, 
       "properties": {
         "postalCode": "N2P 2K5", 
-        "activity": "Annual Holiday Gathering
-", 
+        "activity": "Annual Holiday Gathering", 
         "location": "Deer Ridge Golf Course", 
         "date": "2014-12-04", 
         "time": "7pm", 
         "neighbourhood": "Settler's Grove Community", 
         "description": "Our community is still new so we are making memories and building history.", 
-        "popupContent": "<b>Activity:</b> Annual Holiday Gathering
-<br><b>Location:</b> Deer Ridge Golf Course<br><b>Neighbourhood:</b> Settler's Grove Community<br><b>Date:</b> 2014-12-04<br><b>Time:</b> 7pm<br><b>Description:</b> <i>\"Our community is still new so we are making memories and building history.\"</i>"
+        "popupContent": "<b>Activity:</b> Annual Holiday Gathering<br><b>Location:</b> Deer Ridge Golf Course<br><b>Neighbourhood:</b> Settler's Grove Community<br><b>Date:</b> 2014-12-04<br><b>Time:</b> 7pm<br><b>Description:</b> <i>\"Our community is still new so we are making memories and building history.\"</i>"
       }
     }
   ]
