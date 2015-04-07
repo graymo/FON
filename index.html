@@ -47,42 +47,34 @@ title: home
 		}
 		
     function onEachFeature(feature, layer) {
-      if (feature.properties && feature.properties.WardName) {
-        layer.bindPopup(feature.properties.WardName);
-      	layer.on('mouseover', function (e) {this.openPopup();})
-      	layer.on('mouseout', function (e) {this.closePopup();})
-      }
-      else if (feature.properties && feature.properties.Quote) {
-        layer.bindPopup('<b>Activity: </b>' + feature.properties.Activity + '<br><b>Location: </b>' + feature.properties.Location + '<br><b>Date: </b>' + '<br><br><i>"' + feature.properties.Quote + '"</i>')}
-      else if (feature.properties && feature.properties.description) {
-        layer.bindPopup(feature.properties.description)}
-        else {layer.bindPopup(feature.properties.Activity)
+      if (feature.properties && feature.properties.popupContent) {
+        layer.bindPopup(feature.properties.popupContent)
       }
     }
     
-    var fonFeatures = {{site.data.registered-activities|jsonify}};
-    var unregistered = {{site.data.unregistered-activities|jsonify}};
-    var awards = {{site.data.capital-grants|jsonify}};
+    var registered = {{site.data.registered | jsonify}};
+    var unregistered = {{site.data.unregistered | jsonify}};
+    var capital = {{site.data.capital | jsonify}};
     
-    var events = L.geoJson(fonFeatures, {onEachFeature: onEachFeature});
-    var other = L.geoJson(unregistered, {onEachFeature: onEachFeature});
-    var grants = L.geoJson(awards, {onEachFeature: onEachFeature});
+    var registered = L.geoJson(registered, {onEachFeature: onEachFeature});
+    var unregistered = L.geoJson(unregistered, {onEachFeature: onEachFeature});
+    var capital = L.geoJson(capital, {onEachFeature: onEachFeature});
     
     var wards = {{site.data.ward-boundaries|jsonify}};
     
-    var geojson = L.geoJson(wards, {
+    var wards = L.geoJson(wards, {
       style: style,
       onEachFeature: onEachFeature
     });
     
     var baseLayers = {
-      "City of Kitchener Wards": geojson
+      "City of Kitchener Wards": wards
     };
     
     var overlays = {
-      "Registered FON Events": events,
-      "Other Events": other,
-      "Neighbourhood Improvement Grants": grants
+      "Registered FON Events": registered,
+      "Other Events": unregistered,
+      "Neighbourhood Improvement Grants": capital
     };
     
     L.control.layers(baseLayers, overlays).addTo(map);
