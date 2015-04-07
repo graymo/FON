@@ -52,19 +52,18 @@ title: home
       }
     }
     
-    var registered = {{site.data.registered | jsonify}};
-    var unregistered = {{site.data.unregistered | jsonify}};
-    var capital = {{site.data.capital | jsonify}};
+    var registeredActivities = {{site.data.registered|jsonify}};
+    var unregisteredActivities = {{site.data.unregistered|jsonify}};
+    var capitalGrants = {{site.data.capital|jsonify}};
     
-    var registered = L.geoJson(registered, {onEachFeature: onEachFeature});
-    var unregistered = L.geoJson(unregistered, {onEachFeature: onEachFeature});
-    var capital = L.geoJson(capital, {onEachFeature: onEachFeature});
+    var registered = L.geoJson(registeredActivities, {onEachFeature: onEachFeature});
+    var unregistered = L.geoJson(unregisteredActivities, {onEachFeature: onEachFeature});
+    var capital = L.geoJson(capitalGrants, {onEachFeature: onEachFeature});
     
-    var wards = {{site.data.ward-boundaries|jsonify}};
+    var wardBoundaries = {{site.data.ward-boundaries|jsonify}};
     
-    var wards = L.geoJson(wards, {
+    var wards = L.geoJson(wardBoundaries, {
       style: style,
-      onEachFeature: onEachFeature
     });
     
     var baseLayers = {
