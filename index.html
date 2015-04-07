@@ -64,7 +64,7 @@ title: home
     
     var wards = L.geoJson(wardBoundaries, {
       style: style,
-    });
+    }).addTo(map);
     
     var baseLayers = {
       "City of Kitchener Wards": wards
@@ -76,7 +76,7 @@ title: home
       "Neighbourhood Improvement Capital Grants": capital
     };
     
-    L.control.layers(baseLayers, overlays).addTo(map);
+    L.control.layers(null, overlays, {collapsed: false}).addTo(map);
     
     var legend = L.control({position: 'bottomright'});
     
@@ -87,10 +87,10 @@ title: home
         labels = [];
     
       // loop through our density intervals and generate a label with a colored square for each interval
+      div.innerHTML = '<b>City of Kitchener<br>Wards:</b><br>';
       for (var i = 0; i < wards.length; i++) {
         div.innerHTML +=
-            '<i style="background:' + getColor(wards[i]) + '"></i> ' + 'Ward ' +
-            (wards[i] ? wards[i] + '<br>' : '+');
+            '<i style="background:' + getColor(wards[i]) + '"></i> ' + (wards[i] ? wards[i] + '<br>' : '+');
       }
     
       return div;
