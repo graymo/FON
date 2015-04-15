@@ -64,12 +64,13 @@ title: home
     
     var wards = L.geoJson(wardBoundaries, {
       style: style,
-    });
+    }).addTo(map);
     
-
+    var baseLayers = {
+      "City of Kitchener Wards": wards
+    };
     
     var overlays = {
-      "City of Kitchener Wards": wards
       "Registered Activities": registered,
       "Unregistered Activities": unregistered,
       "Neighbourhood Improvement Capital Grants": capital
