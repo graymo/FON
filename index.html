@@ -10,6 +10,7 @@ title: home
   <div id="map" style="height: 650px"></div>
   
   <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+  <script src = "http://leaflet.github.io/Leaflet.markercluster/dist/leaflet.markercluster-src.js"></script>
   
   <script>
     var map = L.map('map').setView([43.43,-80.46], 12);
@@ -59,6 +60,8 @@ title: home
     var registered = L.geoJson(registeredActivities, {onEachFeature: onEachFeature});
     var unregistered = L.geoJson(unregisteredActivities, {onEachFeature: onEachFeature});
     var capital = L.geoJson(capitalGrants, {onEachFeature: onEachFeature});
+    
+    var markers = L.markerClusterGroup(registered, unregistered, capital);
     
     var wardBoundaries = {{site.data.ward-boundaries|jsonify}};
     
