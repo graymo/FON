@@ -87,7 +87,7 @@ title: home
         labels = [];
     
       // loop through our density intervals and generate a label with a colored square for each interval
-      div.innerHTML = '<b>City of Kitchener<br>Wards:</b><br>';
+      div.innerHTML = '<b>Wards:</b><br>';
       for (var i = 0; i < wards.length; i++) {
         div.innerHTML +=
             '<i style="background:' + getColor(wards[i]) + '"></i> ' + (wards[i] ? wards[i] + '<br>' : '+');
