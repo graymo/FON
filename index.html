@@ -62,6 +62,7 @@ title: home
     var capital = L.geoJson(capitalGrants, {onEachFeature: onEachFeature});
     
     var markers = L.markerClusterGroup(registered, unregistered, capital);
+      map.addLayer(markers);
     
     var wardBoundaries = {{site.data.ward-boundaries|jsonify}};
     
