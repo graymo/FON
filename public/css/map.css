@@ -25,3 +25,7 @@
 }
 
 /*map title*/
+.titleDiv {
+    font: 24px Arial, Helvetica, sans-serif bold;
+}
+/*map polygon labels*/
