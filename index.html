@@ -54,7 +54,7 @@ title: home
       else if (feature.properties && feature.properties.WardName) {
         polygonCentre = layer.getBounds().getCenter();
         myIcon = L.divIcon({html: feature.properties.WardName});
-        L.marker(polygonCentre, {icon: myIcon});
+        L.marker(polygonCentre, {icon: myIcon}).addTo(map);
       }
     }
     //var polygonCenter = layer.getBounds().getCenter();
