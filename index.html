@@ -50,7 +50,7 @@ title: home
     function onEachFeature(feature, layer) {
       if (feature.properties && feature.properties.popupContent) {
         layer.bindPopup(feature.properties.popupContent)
-      },
+      };
       else if (feature.properties && feature.properties.WardName) {
       	layer.bindPopup(feature.properties.WardName)
       }
