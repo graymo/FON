@@ -70,6 +70,14 @@ title: home
       style: style,
     }).addTo(map);
     
+    var title = L.control({position: 'topright'});
+      title.onAdd = function(map) {
+        var div = L.DomUtil.create('div', 'titleDiv');
+        div.innerHTML += 'City of Kitchener Festival of Neighbourhoods 2015';
+        return div
+        }
+        title.addTo(map);
+        
     var baseLayers = {
       "City of Kitchener Wards": wards
     };
