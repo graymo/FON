@@ -33,9 +33,8 @@
 }
 /*map polygon labels*/
 .my-div-icon {
-    font: 14px/16px Arial, Helvetica, sans-serif;
+    font: 14px Arial, Helvetica, sans-serif;
     background: rgba(255,255,255,0.5);
-    border: none;
-    width: 50px;
-    text-align: center;
+    border: 0px solid #fff;
+
 }
