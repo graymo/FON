@@ -23,36 +23,36 @@ title: home
     }).addTo(map);
     
     function getColor(w) {
-			return w == 10 ? '#ffffb3' :
-			       w == 9  ? '#bebada' :
-			       w == 8  ? '#fb8072' :
-			       w == 7  ? '#80b1d3' :
-			       w == 6  ? '#fdb462' :
-			       w == 5  ? '#b3de69' :
-			       w == 4  ? '#fccde5' :
-			       w == 3  ? '#d9d9d9' :
-			       w == 2  ? '#bc80bd' :
-			       w == 1  ? '#8dd3c7' :
-			                 '#ccebc5' ;
-		}
-		
-		function style(feature) {
-			return {
-				weight: 2,
-				opacity: 1,
-				color: 'white',
-				dashArray: '3',
-				fillOpacity: 0.7,
-				fillColor: getColor(feature.properties.WardNumber)
-			};
-		}
-		
+      return w == 10 ? '#ffffb3' :
+             w == 9  ? '#bebada' :
+             w == 8  ? '#fb8072' :
+             w == 7  ? '#80b1d3' :
+             w == 6  ? '#fdb462' :
+             w == 5  ? '#b3de69' :
+             w == 4  ? '#fccde5' :
+             w == 3  ? '#d9d9d9' :
+             w == 2  ? '#bc80bd' :
+             w == 1  ? '#8dd3c7' :
+                       '#ccebc5' ;
+    }
+
+    function style(feature) {
+      return {
+        weight: 2,
+        opacity: 1,
+        color: 'white',
+        dashArray: '3',
+        fillOpacity: 0.7,
+        fillColor: getColor(feature.properties.WardNumber)
+      };
+    }
+
     function onEachFeature(feature, layer) {
       if (feature.properties && feature.properties.popupContent) {
         layer.bindPopup(feature.properties.popupContent)
       }
       else if (feature.properties && feature.properties.WardName) {
-      	layer.bindPopup(feature.properties.WardName)
+        layer.bindPopup(feature.properties.WardName)
       }
     }
     
@@ -70,7 +70,7 @@ title: home
     var wardBoundaries = {{site.data.ward-boundaries|jsonify}};
     
     var wards = L.geoJson(wardBoundaries, {
-    	onEachFeature: onEachFeature,
+      onEachFeature: onEachFeature,
       style: style,
     }).addTo(map);
     
@@ -130,13 +130,11 @@ title: home
     legend.addTo(map);
 
     var popup = L.popup();
-  	function onMapClick(e) {
-			popup
-			 .setLatLng(e.latlng)
-				.setContent("You clicked the map at " + e.latlng.toString())
-				.openOn(map);
-		}
-
-		map.on('click', onMapClick);
-		
+      function onMapClick(e) {
+        popup
+          .setLatLng(e.latlng)
+          .setContent("You clicked the map at " + e.latlng.toString())
+          .openOn(map)
+      }
+      map.on('click', onMapClick);
   </script>
