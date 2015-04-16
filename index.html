@@ -74,6 +74,11 @@ title: home
       style: style,
     }).addTo(map);
     
+    var myIcon = L.divIcon();
+    // you can set .my-div-icon styles in CSS
+
+      L.marker([43.43,-80.46], {icon: myIcon}).addTo(map);
+    
     var title = L.control({position: 'topright'});
       title.onAdd = function(map) {
         var div = L.DomUtil.create('div', 'titleDiv');
