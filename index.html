@@ -55,7 +55,8 @@ title: home
         polygonCentre = layer.getBounds().getCenter();
         myIcon = L.divIcon({
           className: 'my-div-icon',
-          html: feature.properties.WardName
+          html: feature.properties.WardName,
+          iconSize: new L.Point(10,20)
         });
         L.marker(polygonCentre, {icon: myIcon}).addTo(map);
       }
