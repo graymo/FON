@@ -61,21 +61,6 @@ title: home
         L.marker(polygonCentre, {icon: myIcon}).addTo(map);
       }
     }
-    //var polygonCenter = layer.getBounds().getCenter();
-    //var myIcon = L.divIcon({html: 'Ward 1'});
-    // you can set .my-div-icon styles in CSS
-
-      //L.marker(polygonCentre, {icon: myIcon}).addTo(map);
-      //ward 1 43.46762, -80.45803
-      //ward 2 43.4427, -80.43383
-      //ward 3 43.41477, -80.44653
-      //ward 4 43.38359, -80.4443
-      //ward 5 43.38709, -80.50438
-      //ward 6 43.41527, -80.49511
-      //ward 7 43.4255, -80.55141
-      //ward 8 43.43023, -80.51949
-      //ward 9 43.44046, -80.49889
-      //ward 10 43.45616, -80.4903
       
     var registeredActivities = {{site.data.registered|jsonify}};
     var unregisteredActivities = {{site.data.unregistered|jsonify}};
@@ -119,20 +104,20 @@ title: home
     
       legend.onAdd = function (map) {
     
-      var div = L.DomUtil.create('div', 'info legend'),
-        wards = [1,2,3,4,5,6,7,8,9,10],
-        labels = [];
+//      var div = L.DomUtil.create('div', 'info legend'),
+//        wards = [1,2,3,4,5,6,7,8,9,10],
+//        labels = [];
     
       // loop through our density intervals and generate a label with a colored square for each interval
-      div.innerHTML = '<b>Wards:</b><br>';
-      for (var i = 0; i < wards.length; i++) {
-        div.innerHTML +=
-            '<i style="background:' + getColor(wards[i]) + '"></i> ' + (wards[i] ? wards[i] + '<br>' : '+');
-      }
+//      div.innerHTML = '<b>Wards:</b><br>';
+//      for (var i = 0; i < wards.length; i++) {
+//        div.innerHTML +=
+//            '<i style="background:' + getColor(wards[i]) + '"></i> ' + (wards[i] ? wards[i] + '<br>' : '+');
+//      }
     
-      return div;
-      };
+//      return div;
+//      };
     
-    legend.addTo(map);
+//    legend.addTo(map);
 
   </script>
