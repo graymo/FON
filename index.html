@@ -53,7 +53,10 @@ title: home
       }
       else if (feature.properties && feature.properties.WardName) {
         polygonCentre = layer.getBounds().getCenter();
-        myIcon = L.divIcon({html: feature.properties.WardName});
+        myIcon = L.divIcon({
+          className: 'my-div-icon',
+          html: feature.properties.WardName
+        });
         L.marker(polygonCentre, {icon: myIcon}).addTo(map);
       }
     }
