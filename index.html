@@ -52,32 +52,16 @@ title: home
         layer.bindPopup(feature.properties.popupContent)
       }
       else if (feature.properties && feature.properties.WardName) {
-        layer.bindPopup(feature.properties.WardName)
+        polygonCentre = layer.getBounds().getCenter();
+        myIcon = L.divIcon({html: feature.properties.WardName});
+        L.marker(polygonCentre, {icon: myIcon});
       }
     }
-    
-    var registeredActivities = {{site.data.registered|jsonify}};
-    var unregisteredActivities = {{site.data.unregistered|jsonify}};
-    var capitalGrants = {{site.data.capital|jsonify}};
-    
-    var registered = L.geoJson(registeredActivities, {onEachFeature: onEachFeature});
-    var unregistered = L.geoJson(unregisteredActivities, {onEachFeature: onEachFeature});
-    var capital = L.geoJson(capitalGrants, {onEachFeature: onEachFeature});
-    
-    var markers = L.markerClusterGroup(registered, unregistered, capital);
-      map.addLayer(markers);
-    
-    var wardBoundaries = {{site.data.ward-boundaries|jsonify}};
-    
-    var wards = L.geoJson(wardBoundaries, {
-      onEachFeature: onEachFeature,
-      style: style,
-    }).addTo(map);
-    
+    var polygonCenter = layer.getBounds().getCenter();
     var myIcon = L.divIcon({html: 'Ward 1'});
     // you can set .my-div-icon styles in CSS
 
-      L.marker([43.46762, -80.45803], {icon: myIcon}).addTo(map);
+      L.marker(polygonCentre, {icon: myIcon}).addTo(map);
       //ward 1 43.46762, -80.45803
       //ward 2 43.4427, -80.43383
       //ward 3 43.41477, -80.44653
@@ -88,6 +72,24 @@ title: home
       //ward 8 43.43023, -80.51949
       //ward 9 43.44046, -80.49889
       //ward 10 43.45616, -80.4903
+      
+    var registeredActivities = {{site.data.registered|jsonify}};
+    var unregisteredActivities = {{site.data.unregistered|jsonify}};
+    var capitalGrants = {{site.data.capital|jsonify}};
+    
+    var registered = L.geoJson(registeredActivities, {onEachFeature: onEachFeature});
+    var unregistered = L.geoJson(unregisteredActivities, {onEachFeature: onEachFeature});
+    var capital = L.geoJson(capitalGrants, {onEachFeature: onEachFeature});
+    
+    var markers = L.markerClusterGroup(unregistered);
+      map.addLayer(markers);
+    
+    var wardBoundaries = {{site.data.ward-boundaries|jsonify}};
+    
+    var wards = L.geoJson(wardBoundaries, {
+      onEachFeature: onEachFeature,
+      style: style,
+    }).addTo(map);
     
     var title = L.control({position: 'topright'});
       title.onAdd = function(map) {
