@@ -27,5 +27,6 @@
 /*map title*/
 .titleDiv {
     font: 24px Arial, Helvetica, sans-serif bold;
+    background: rgba(255,255,255,0.8);
 }
 /*map polygon labels*/
