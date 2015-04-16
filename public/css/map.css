@@ -33,6 +33,6 @@
 }
 /*map polygon labels*/
 .my-div-icon {
-    background: none;
-    border: 0px;
+    background: red;
+    border: 2px solid #666;
 }
