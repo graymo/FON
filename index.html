@@ -119,9 +119,10 @@ title: home
     
     legend.addTo(map);
 
-		function onMapClick(e) {
+    var popup = L.popup();
+  	function onMapClick(e) {
 			popup
-				.setLatLng(e.latlng)
+			 .setLatLng(e.latlng)
 				.setContent("You clicked the map at " + e.latlng.toString())
 				.openOn(map);
 		}
