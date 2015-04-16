@@ -50,6 +50,9 @@ title: home
     function onEachFeature(feature, layer) {
       if (feature.properties && feature.properties.popupContent) {
         layer.bindPopup(feature.properties.popupContent)
+      },
+      else if (feature.properties && feature.properties.WardName) {
+      	layer.bindPopup(feature.properties.WardName)
       }
     }
     
@@ -67,6 +70,7 @@ title: home
     var wardBoundaries = {{site.data.ward-boundaries|jsonify}};
     
     var wards = L.geoJson(wardBoundaries, {
+    	onEachFeature: onEachFeature,
       style: style,
     }).addTo(map);
     
